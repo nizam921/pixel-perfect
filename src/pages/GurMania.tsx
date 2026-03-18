@@ -58,7 +58,7 @@ const GurManiaPage = () => {
         <div className="absolute inset-0 bg-gradient-to-r from-gurmania/40 via-transparent to-gurmania/40" />
 
         {/* Loyalty ribbon — vertical strip on left side */}
-        <div className="absolute top-0 left-0 bottom-0 z-20 hidden lg:block w-[270px]">
+        <div className="absolute top-0 left-0 bottom-0 z-20 hidden md:block md:w-[220px] lg:w-[270px]">
           <div className="h-full bg-gradient-to-b from-gurmania/90 via-gurmania/70 to-gurmania/90 backdrop-blur-xl border-r border-gold/10">
             <div className="flex flex-col items-center justify-center h-full px-5 py-20 gap-6">
               <div className="flex items-center gap-2">
@@ -111,7 +111,7 @@ const GurManiaPage = () => {
         </div>
 
         {/* Hero content — centered */}
-        <div className="absolute inset-0 flex items-center z-10 px-4 lg:pl-[290px]">
+        <div className="absolute inset-0 flex items-center z-10 px-4 md:pl-[240px] lg:pl-[290px]">
           <div className="container mx-auto px-4 md:px-8">
             <div className="text-center max-w-3xl mx-auto">
               <span className="font-logo text-5xl md:text-7xl text-gold mb-4 drop-shadow-2xl inline-block">GurMania</span>
@@ -144,7 +144,7 @@ const GurManiaPage = () => {
               </div>
 
               {/* Mobile loyalty card */}
-              <div className="lg:hidden mt-6 bg-gurmania/60 backdrop-blur-xl border border-gold/15 rounded-xl p-4 text-left">
+              <div className="md:hidden mt-6 bg-gurmania/60 backdrop-blur-xl border border-gold/15 rounded-xl p-4 text-left">
                 <div className="flex items-center gap-2 mb-3">
                   <CreditCard className="w-4 h-4 text-gold" />
                   <h3 className="font-display text-xs tracking-[0.15em] text-gold">{t.loyalty.title}</h3>
