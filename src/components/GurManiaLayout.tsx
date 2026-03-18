@@ -6,7 +6,20 @@ import { Menu, X, ShoppingBag, User } from "lucide-react";
 import gurmaniaLogoText from "@/assets/gurmania-logo-text.png";
 import { Lang, languages, gmContent } from "@/lib/i18n";
 
-interface Props {
+const NewsletterForm = ({ lang }: { lang: string }) => {
+  const [email, setEmail] = useState("");
+  const [done, setDone] = useState(false);
+  if (done) return <p className="font-body text-gold text-sm">✓ {lang === "RU" ? "Подписано!" : lang === "AZ" ? "Abunə oldunuz!" : "Subscribed!"}</p>;
+  return (
+    <div className="flex gap-2">
+      <input value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Email" type="email" className="flex-1 bg-gurmania/50 border border-gold/15 rounded-lg px-3 py-2 font-body text-xs text-gurmania-foreground placeholder:text-gurmania-foreground/30 focus:outline-none focus:border-gold/40 transition-colors min-w-0" />
+      <button onClick={() => { if (email) setDone(true); }} className="bg-gold text-gurmania font-display text-[9px] tracking-[0.2em] px-4 py-2 rounded-lg hover:bg-gold-glow transition-colors flex-shrink-0">
+        <Mail className="w-3.5 h-3.5" />
+      </button>
+    </div>
+  );
+};
+
   lang: Lang;
   setLang: (l: Lang) => void;
   children: React.ReactNode;
