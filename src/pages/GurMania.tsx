@@ -142,6 +142,40 @@ const GurManiaPage = () => {
                   {t.hero.ctaEvents}
                 </Link>
               </div>
+
+              {/* Mobile loyalty card */}
+              <div className="lg:hidden mt-6 bg-gurmania/60 backdrop-blur-xl border border-gold/15 rounded-xl p-4 text-left">
+                <div className="flex items-center gap-2 mb-3">
+                  <CreditCard className="w-4 h-4 text-gold" />
+                  <h3 className="font-display text-xs tracking-[0.15em] text-gold">{t.loyalty.title}</h3>
+                </div>
+                <div className="flex items-center gap-2 mb-3">
+                  <input
+                    value={cardNumber}
+                    onChange={(e) => setCardNumber(e.target.value)}
+                    placeholder={t.loyalty.placeholder}
+                    className="flex-1 bg-gurmania/50 border border-gold/15 rounded-lg px-3 py-2 font-body text-xs text-gurmania-foreground placeholder:text-gurmania-foreground/30 focus:outline-none focus:border-gold/40 transition-colors min-w-0"
+                  />
+                  <button className="text-gurmania bg-gold font-display text-[9px] tracking-[0.2em] px-4 py-2 rounded-lg hover:bg-gold-glow transition-colors flex-shrink-0">
+                    {t.loyalty.btn}
+                  </button>
+                </div>
+                <div className="flex items-center justify-between gap-3">
+                  {[
+                    { icon: Star, text: lang === "RU" ? "Баллы" : lang === "AZ" ? "Ballar" : "Points" },
+                    { icon: Gift, text: lang === "RU" ? "Скидки" : lang === "AZ" ? "Endirimlər" : "Discounts" },
+                    { icon: Crown, text: lang === "RU" ? "VIP" : lang === "AZ" ? "VIP" : "VIP" },
+                  ].map((item, i) => (
+                    <div key={i} className="flex items-center gap-1">
+                      <item.icon className="w-3 h-3 text-gold/50 flex-shrink-0" />
+                      <span className="font-body text-gurmania-foreground/50 text-[10px]">{item.text}</span>
+                    </div>
+                  ))}
+                  <button className="bg-gold text-gurmania font-display text-[8px] tracking-[0.2em] px-3 py-1 rounded-md hover:bg-gold-glow transition-colors flex-shrink-0">
+                    {t.club.btn}
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
         </div>
