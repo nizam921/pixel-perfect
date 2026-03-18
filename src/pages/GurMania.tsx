@@ -56,53 +56,95 @@ const GurManiaPage = () => {
         <div className="absolute inset-0 bg-gradient-to-t from-gurmania via-gurmania/60 to-gurmania/30" />
         <div className="absolute inset-0 bg-gradient-to-r from-gurmania/40 via-transparent to-gurmania/40" />
 
-        <div className="absolute inset-0 flex flex-col items-center justify-center text-center z-10 px-4">
-          <span className="font-logo text-5xl md:text-7xl text-gold mb-4 drop-shadow-2xl">GurMania</span>
-          <div className="w-12 h-px bg-gradient-to-r from-transparent via-gold to-transparent mb-5" />
+        <div className="absolute inset-0 flex items-center z-10 px-4">
+          <div className="container mx-auto px-4 md:px-8">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+              {/* Left — Loyalty card + benefits */}
+              <div className="order-2 lg:order-1">
+                <div className="bg-gurmania/60 backdrop-blur-xl border border-gold/15 rounded-xl p-5 md:p-6">
+                  <div className="flex items-center gap-2 mb-4">
+                    <CreditCard className="w-5 h-5 text-gold" />
+                    <h3 className="font-display text-sm tracking-[0.15em] text-gold">{t.loyalty.title}</h3>
+                  </div>
+                  <div className="flex items-center gap-2 mb-5">
+                    <input
+                      value={cardNumber}
+                      onChange={(e) => setCardNumber(e.target.value)}
+                      placeholder={t.loyalty.placeholder}
+                      className="flex-1 bg-gurmania/50 border border-gold/15 rounded-lg px-4 py-2.5 font-body text-sm text-gurmania-foreground placeholder:text-gurmania-foreground/30 focus:outline-none focus:border-gold/40 transition-colors min-w-0"
+                    />
+                    <button className="text-gurmania bg-gold font-display text-[10px] tracking-[0.2em] px-5 py-2.5 rounded-lg hover:bg-gold-glow transition-colors flex-shrink-0">
+                      {t.loyalty.btn}
+                    </button>
+                  </div>
 
-          {/* Animated slide text */}
-          <div className="h-20 md:h-24 flex flex-col items-center justify-center overflow-hidden">
-            <div
-              key={currentSlide}
-              className="text-center animate-fade-in"
-            >
-              <h1 className="font-display text-gurmania-foreground text-xl md:text-3xl lg:text-4xl tracking-[0.1em] mb-2">
-                {slideContent.title}
-              </h1>
-              <p className="font-body text-gurmania-foreground/50 text-sm md:text-base tracking-[0.15em]">
-                {slideContent.subtitle}
-              </p>
-            </div>
-          </div>
+                  <div className="border-t border-gold/10 pt-4 mb-4">
+                    <p className="font-display text-[10px] tracking-[0.2em] text-gurmania-foreground/40 uppercase mb-3">
+                      {lang === "RU" ? "Преимущества карты" : lang === "AZ" ? "Kartın üstünlükləri" : "Card Benefits"}
+                    </p>
+                    <div className="space-y-2">
+                      {[
+                        { icon: Star, text: lang === "RU" ? "Накопление баллов за каждую покупку" : lang === "AZ" ? "Hər alışa görə bal toplanması" : "Earn points on every purchase" },
+                        { icon: Gift, text: lang === "RU" ? "Эксклюзивные скидки и подарки" : lang === "AZ" ? "Eksklüziv endirimlər və hədiyyələr" : "Exclusive discounts & gifts" },
+                        { icon: Crown, text: lang === "RU" ? "Приоритетный доступ к мероприятиям" : lang === "AZ" ? "Tədbirlərə prioritet giriş" : "Priority access to events" },
+                      ].map((item, i) => (
+                        <div key={i} className="flex items-center gap-2.5">
+                          <item.icon className="w-3.5 h-3.5 text-gold/60 flex-shrink-0" />
+                          <span className="font-body text-gurmania-foreground/60 text-xs">{item.text}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
 
-          <div className="flex flex-col sm:flex-row gap-3 mt-6">
-            <Link
-              to="/gurmania/catalog"
-              className="border border-gold text-gold font-display text-xs tracking-[0.3em] px-10 py-3 hover:bg-gold hover:text-gurmania transition-all duration-500"
-            >
-              {t.hero.ctaCatalog}
-            </Link>
-            <Link
-              to="/gurmania/events"
-              className="border border-gurmania-foreground/15 text-gurmania-foreground/50 font-display text-xs tracking-[0.3em] px-10 py-3 hover:border-gold/40 hover:text-gold/70 transition-all duration-500"
-            >
-              {t.hero.ctaEvents}
-            </Link>
-          </div>
+                  <div className="bg-gold/10 border border-gold/20 rounded-lg p-3 flex items-center justify-between">
+                    <div>
+                      <p className="font-display text-xs tracking-wider text-gold mb-0.5">
+                        {lang === "RU" ? "Клуб Гурманов" : lang === "AZ" ? "Gurmanlar Klubu" : "Gourmet Club"}
+                      </p>
+                      <p className="font-body text-gurmania-foreground/50 text-[11px]">
+                        {lang === "RU" ? "Подпишитесь всего за" : lang === "AZ" ? "Cəmi ilə abunə olun" : "Subscribe for just"}{" "}
+                        <span className="text-gold font-display">0.99 ₼</span>
+                        {lang === "RU" ? "/мес" : lang === "AZ" ? "/ay" : "/mo"}
+                      </p>
+                    </div>
+                    <button className="bg-gold text-gurmania font-display text-[9px] tracking-[0.2em] px-4 py-2 rounded-lg hover:bg-gold-glow transition-colors flex-shrink-0">
+                      {t.club.btn}
+                    </button>
+                  </div>
+                </div>
+              </div>
 
-          {/* Loyalty card */}
-          <div className="mt-8 w-full max-w-md">
-            <div className="bg-gurmania/60 backdrop-blur-xl border border-gold/15 rounded-xl px-4 py-3 flex items-center gap-3">
-              <CreditCard className="w-5 h-5 text-gold flex-shrink-0" />
-              <input
-                value={cardNumber}
-                onChange={(e) => setCardNumber(e.target.value)}
-                placeholder={t.loyalty.placeholder}
-                className="flex-1 bg-transparent font-body text-sm text-gurmania-foreground placeholder:text-gurmania-foreground/30 focus:outline-none min-w-0"
-              />
-              <button className="text-gold font-display text-[10px] tracking-[0.2em] px-4 py-1.5 border border-gold/25 rounded-lg hover:bg-gold/10 transition-colors flex-shrink-0">
-                {t.loyalty.btn}
-              </button>
+              {/* Right — Branding + slide text + CTAs */}
+              <div className="order-1 lg:order-2 text-center lg:text-right">
+                <span className="font-logo text-5xl md:text-7xl text-gold mb-4 drop-shadow-2xl inline-block">GurMania</span>
+                <div className="w-12 h-px bg-gradient-to-r from-transparent via-gold to-transparent mb-5 mx-auto lg:ml-auto lg:mr-0" />
+
+                <div className="h-20 md:h-24 flex flex-col items-center lg:items-end justify-center overflow-hidden">
+                  <div key={currentSlide} className="animate-fade-in">
+                    <h1 className="font-display text-gurmania-foreground text-xl md:text-3xl lg:text-4xl tracking-[0.1em] mb-2">
+                      {slideContent.title}
+                    </h1>
+                    <p className="font-body text-gurmania-foreground/50 text-sm md:text-base tracking-[0.15em]">
+                      {slideContent.subtitle}
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex flex-col sm:flex-row gap-3 mt-6 justify-center lg:justify-end">
+                  <Link
+                    to="/gurmania/catalog"
+                    className="border border-gold text-gold font-display text-xs tracking-[0.3em] px-10 py-3 hover:bg-gold hover:text-gurmania transition-all duration-500"
+                  >
+                    {t.hero.ctaCatalog}
+                  </Link>
+                  <Link
+                    to="/gurmania/events"
+                    className="border border-gurmania-foreground/15 text-gurmania-foreground/50 font-display text-xs tracking-[0.3em] px-10 py-3 hover:border-gold/40 hover:text-gold/70 transition-all duration-500"
+                  >
+                    {t.hero.ctaEvents}
+                  </Link>
+                </div>
+              </div>
             </div>
           </div>
         </div>
