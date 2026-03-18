@@ -7,7 +7,7 @@ import innvinoLogo from "@/assets/innvino-logo-clean.png";
 const languages = ["AZ", "RU", "EN"] as const;
 type Lang = (typeof languages)[number];
 
-const content: Record<Lang, { choose: string; gurSub: string; gurTag: string; gurBtn: string; innSub: string; innTag: string; innBtn: string }> = {
+const content: Record<Lang, { choose: [string, string, string]; gurSub: string; gurTag: string; gurBtn: string; innSub: string; innTag: string; innBtn: string }> = {
   AZ: {
     choose: "YOLUNUZU SEÇİN",
     gurSub: "Premium Şərablar · Pendirlər · Delikatesslər",
