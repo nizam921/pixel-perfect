@@ -285,8 +285,8 @@ const SplashScreen = () => {
               exit={{ opacity: 0 }}
               transition={{ duration: 0.3 }}
             >
-              <span className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 font-display text-gold text-[10px] tracking-[0.4em] bg-gurmania/90 px-4 py-1 whitespace-nowrap">
-                {t.choose}
+              <span className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 font-display text-gold text-[10px] tracking-[0.4em] uppercase bg-gurmania/90 px-4 py-2 whitespace-nowrap leading-relaxed text-center">
+                {t.choose[0]}<br/>{t.choose[1]}<br/>{t.choose[2]}
               </span>
             </motion.div>
           )}
