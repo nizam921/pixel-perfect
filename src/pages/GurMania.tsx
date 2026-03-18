@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { CreditCard, Crown, Star, Gift, ChevronRight, Mail, MapPin, Clock, Wine, Grape } from "lucide-react";
@@ -59,8 +59,24 @@ const GurManiaPage = () => {
 
         {/* Loyalty ribbon — vertical strip on left side */}
         <div className="absolute top-0 left-0 bottom-0 z-20 hidden md:block md:w-[220px] lg:w-[270px]">
-          <div className="h-full bg-gradient-to-b from-gurmania/90 via-gurmania/70 to-gurmania/90 backdrop-blur-xl border-r border-gold/10">
-            <div className="flex flex-col items-center justify-center h-full px-5 py-20 gap-6">
+          <div className="h-full bg-gradient-to-b from-gurmania/90 via-gurmania/70 to-gurmania/90 backdrop-blur-xl border-r border-gold/10 relative overflow-hidden">
+            {/* Falling stars */}
+            {Array.from({ length: 12 }).map((_, i) => (
+              <span
+                key={i}
+                className="absolute text-gold pointer-events-none"
+                style={{
+                  left: `${10 + Math.random() * 80}%`,
+                  top: `-20px`,
+                  fontSize: `${8 + Math.random() * 6}px`,
+                  opacity: 0,
+                  animation: `star-fall ${6 + Math.random() * 8}s linear ${Math.random() * 10}s infinite`,
+                }}
+              >
+                ✦
+              </span>
+            ))}
+            <div className="flex flex-col items-center justify-center h-full px-5 py-20 gap-6 relative z-10">
               <div className="flex items-center gap-2">
                 <CreditCard className="w-4 h-4 text-gold" />
                 <h3 className="font-display text-[10px] tracking-[0.15em] text-gold">{t.loyalty.title}</h3>
