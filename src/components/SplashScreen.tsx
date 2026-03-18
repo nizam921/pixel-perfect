@@ -96,13 +96,20 @@ const SplashScreen = () => {
         {!isTransitioning && (
           <motion.div
             className="hidden md:flex absolute items-center justify-center pointer-events-none"
-            style={{ bottom: '12%', left: '50%', transform: 'translateX(-50%)', zIndex: 60 }}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
+            style={{ zIndex: 60 }}
+            initial={{ opacity: 0 }}
+            animate={{
+              opacity: 1,
+              top: '50%',
+              left: `${(diagLeft + diagRight) / 2}%`,
+              rotate: `${Math.atan2(-(diagLeft - diagRight), 100) * (180 / Math.PI) - 90}deg`,
+              x: '-50%',
+              y: '-50%',
+            }}
             exit={{ opacity: 0, scale: 0.9 }}
-            transition={{ delay: 0.8, duration: 0.8 }}
+            transition={{ duration: 0.6, ease: "easeInOut" }}
           >
-            <p className="font-display text-gold text-xs tracking-[0.35em] uppercase leading-[2.2] text-center mix-blend-difference">
+            <p className="font-display text-gold text-xs tracking-[0.35em] uppercase leading-[2.2] text-center whitespace-nowrap">
               {t.choose[0]}<br/>{t.choose[1]}<br/>{t.choose[2]}
             </p>
           </motion.div>
