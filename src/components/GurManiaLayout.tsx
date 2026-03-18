@@ -228,15 +228,20 @@ const GurManiaLayout = ({ lang, setLang, children }: Props) => {
                   marketing@gurmania.az
                 </p>
               </div>
+              <div className="mt-5 pt-4 border-t border-gold/10">
+                <h4 className="font-display text-gold/80 text-[10px] tracking-[0.3em] mb-2 uppercase">
+                  {lang === "RU" ? "Часы работы" : lang === "AZ" ? "İş saatları" : "Hours"}
+                </h4>
+                <p className="font-body text-gurmania-text-secondary text-sm">
+                  {lang === "RU" ? "Ежедневно: 10:00 – 22:00" : lang === "AZ" ? "Hər gün: 10:00 – 22:00" : "Daily: 10:00 – 22:00"}
+                </p>
+              </div>
             </div>
 
             <div>
               <h4 className="font-display text-gold/80 text-xs tracking-[0.3em] mb-5 uppercase">
                 {lang === "RU" ? "Будьте в курсе" : lang === "AZ" ? "Xəbərdar olun" : "Stay Updated"}
               </h4>
-              <p className="font-body text-gurmania-text-secondary text-sm mb-3">
-                {lang === "RU" ? "Ежедневно: 10:00 – 22:00" : lang === "AZ" ? "Hər gün: 10:00 – 22:00" : "Daily: 10:00 – 22:00"}
-              </p>
               <NewsletterForm lang={lang} />
             </div>
           </div>
