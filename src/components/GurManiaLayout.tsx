@@ -212,9 +212,9 @@ const GurManiaLayout = ({ lang, setLang, children }: Props) => {
               </h4>
               <div className="space-y-2.5">
                 <p className="font-body text-gurmania-text-secondary text-sm">{t.footer.address}</p>
-                <p className="font-body text-gurmania-text-secondary text-sm">+994 12 000 00 00</p>
+                <p className="font-body text-gurmania-text-secondary text-sm">+994 50 262 05 88</p>
                 <p className="font-body text-gold/70 text-sm hover:text-gold transition-colors cursor-pointer">
-                  info@gurmania.az
+                  marketing@gurmania.az
                 </p>
               </div>
             </div>
@@ -225,10 +225,7 @@ const GurManiaLayout = ({ lang, setLang, children }: Props) => {
               </h4>
               <div className="space-y-2.5">
                 <p className="font-body text-gurmania-text-secondary text-sm">
-                  {lang === "RU" ? "Пн–Сб: 10:00 – 22:00" : lang === "AZ" ? "BE–Ş: 10:00 – 22:00" : "Mon–Sat: 10:00 – 22:00"}
-                </p>
-                <p className="font-body text-gurmania-text-secondary text-sm">
-                  {lang === "RU" ? "Вс: 12:00 – 20:00" : lang === "AZ" ? "B: 12:00 – 20:00" : "Sun: 12:00 – 20:00"}
+                  {lang === "RU" ? "Ежедневно: 10:00 – 22:00" : lang === "AZ" ? "Hər gün: 10:00 – 22:00" : "Daily: 10:00 – 22:00"}
                 </p>
               </div>
             </div>
