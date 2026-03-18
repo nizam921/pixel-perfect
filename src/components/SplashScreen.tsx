@@ -48,6 +48,23 @@ const SplashScreen = () => {
 
   const isTransitioning = selected !== "none";
 
+  // Calculate diagonal angle dynamically
+  const [diagAngle, setDiagAngle] = useState(-15);
+  useEffect(() => {
+    const updateAngle = () => {
+      const w = window.innerWidth;
+      const h = window.innerHeight;
+      // Diagonal goes from (diagLeft% * w, 0) to (diagRight% * w, h)
+      const dx = (42 - 58) / 100 * w; // default positions
+      const dy = h;
+      const angle = Math.atan2(dy, dx) * (180 / Math.PI) - 90;
+      setDiagAngle(angle);
+    };
+    updateAngle();
+    window.addEventListener('resize', updateAngle);
+    return () => window.removeEventListener('resize', updateAngle);
+  }, []);
+
   // Diagonal positions
   const getDiag = () => {
     if (selected === "gur") return { left: 110, right: 110 };
