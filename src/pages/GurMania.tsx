@@ -41,75 +41,57 @@ const GurManiaPage = () => {
     <GurManiaLayout lang={lang} setLang={setLang}>
       {/* ═══════ Hero with integrated loyalty ═══════ */}
       <section className="relative h-screen overflow-hidden">
+        {/* Background slides */}
         {heroSlides.map((slide, i) => (
-          <motion.div
+          <div
             key={i}
-            className="absolute inset-0 bg-cover bg-center"
-            style={{ backgroundImage: `url(${slide})` }}
-            initial={false}
-            animate={{ opacity: currentSlide === i ? 1 : 0, scale: currentSlide === i ? 1 : 1.08 }}
-            transition={{ duration: 1.5, ease: "easeInOut" }}
+            className="absolute inset-0 bg-cover bg-center transition-all duration-[1500ms] ease-in-out"
+            style={{
+              backgroundImage: `url(${slide})`,
+              opacity: currentSlide === i ? 1 : 0,
+              transform: currentSlide === i ? "scale(1)" : "scale(1.08)",
+            }}
           />
         ))}
         <div className="absolute inset-0 bg-gradient-to-t from-gurmania via-gurmania/60 to-gurmania/30" />
         <div className="absolute inset-0 bg-gradient-to-r from-gurmania/40 via-transparent to-gurmania/40" />
 
         <div className="absolute inset-0 flex flex-col items-center justify-center text-center z-10 px-4">
-          <motion.img
-            src={gurmaniaLogo}
-            alt="GurMania"
-            className="w-36 md:w-48 mb-6 rounded-sm drop-shadow-2xl"
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1, delay: 0.2 }}
-          />
+          <span className="font-logo text-5xl md:text-7xl text-gold mb-4 drop-shadow-2xl">GurMania</span>
           <div className="w-12 h-px bg-gradient-to-r from-transparent via-gold to-transparent mb-5" />
 
           {/* Animated slide text */}
-          <div className="h-24 md:h-28 flex flex-col items-center justify-center relative">
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={currentSlide}
-                initial={{ opacity: 0, y: 15 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -15 }}
-                transition={{ duration: 0.5 }}
-                className="text-center absolute"
-              >
-                <h1 className="font-display text-gurmania-foreground text-2xl md:text-4xl lg:text-5xl tracking-[0.1em] mb-2">
-                  {slideContent.title}
-                </h1>
-                <p className="font-body text-gurmania-foreground/50 text-base md:text-lg tracking-[0.15em]">
-                  {slideContent.subtitle}
-                </p>
-              </motion.div>
-            </AnimatePresence>
+          <div className="h-20 md:h-24 flex flex-col items-center justify-center overflow-hidden">
+            <div
+              key={currentSlide}
+              className="text-center animate-fade-in"
+            >
+              <h1 className="font-display text-gurmania-foreground text-xl md:text-3xl lg:text-4xl tracking-[0.1em] mb-2">
+                {slideContent.title}
+              </h1>
+              <p className="font-body text-gurmania-foreground/50 text-sm md:text-base tracking-[0.15em]">
+                {slideContent.subtitle}
+              </p>
+            </div>
           </div>
 
-          <motion.div
-            className="flex flex-col sm:flex-row gap-3 mt-8"
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.8 }}
-          >
+          <div className="flex flex-col sm:flex-row gap-3 mt-6">
             <Link
               to="/gurmania/catalog"
               className="border border-gold text-gold font-display text-xs tracking-[0.3em] px-10 py-3 hover:bg-gold hover:text-gurmania transition-all duration-500"
             >
               {t.hero.ctaCatalog}
             </Link>
-            <button className="border border-gurmania-foreground/15 text-gurmania-foreground/50 font-display text-xs tracking-[0.3em] px-10 py-3 hover:border-gold/40 hover:text-gold/70 transition-all duration-500">
+            <Link
+              to="/gurmania/events"
+              className="border border-gurmania-foreground/15 text-gurmania-foreground/50 font-display text-xs tracking-[0.3em] px-10 py-3 hover:border-gold/40 hover:text-gold/70 transition-all duration-500"
+            >
               {t.hero.ctaEvents}
-            </button>
-          </motion.div>
+            </Link>
+          </div>
 
-          {/* Loyalty card - integrated into hero bottom */}
-          <motion.div
-            className="absolute bottom-16 md:bottom-20 left-1/2 -translate-x-1/2 w-full max-w-md px-4"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 1.2 }}
-          >
+          {/* Loyalty card */}
+          <div className="mt-8 w-full max-w-md">
             <div className="bg-gurmania/60 backdrop-blur-xl border border-gold/15 rounded-xl px-4 py-3 flex items-center gap-3">
               <CreditCard className="w-5 h-5 text-gold flex-shrink-0" />
               <input
@@ -122,7 +104,7 @@ const GurManiaPage = () => {
                 {t.loyalty.btn}
               </button>
             </div>
-          </motion.div>
+          </div>
         </div>
 
         {/* Slide indicators */}
