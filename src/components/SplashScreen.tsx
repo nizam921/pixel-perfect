@@ -101,8 +101,8 @@ const SplashScreen = () => {
             exit={{ opacity: 0, scale: 0.9 }}
             transition={{ delay: 0.8, duration: 0.8 }}
           >
-            <p className="font-display text-gold text-base tracking-[0.4em] drop-shadow-[0_2px_8px_rgba(201,168,76,0.4)]">
-              {t.choose}
+            <p className="font-display text-gold text-lg tracking-[0.4em] uppercase drop-shadow-[0_2px_8px_rgba(201,168,76,0.4)] leading-relaxed">
+              {t.choose[0]}<br/>{t.choose[1]}<br/>{t.choose[2]}
             </p>
           </motion.div>
         )}
