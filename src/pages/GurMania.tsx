@@ -122,7 +122,7 @@ const GurManiaPage = () => {
       </section>
 
       {/* ═══════ About Section ═══════ */}
-      <section className="py-14 md:py-20 bg-gurmania-surface relative overflow-hidden">
+      <section className="py-10 md:py-14 bg-gurmania-surface relative overflow-hidden">
         <div className="container mx-auto px-4 md:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-14 items-center">
             <motion.div
