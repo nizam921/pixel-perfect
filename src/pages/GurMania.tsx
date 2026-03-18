@@ -122,9 +122,9 @@ const GurManiaPage = () => {
       </section>
 
       {/* ═══════ About Section ═══════ */}
-      <section className="py-14 md:py-20 bg-gurmania-surface relative overflow-hidden">
+      <section className="py-10 md:py-14 bg-gurmania-surface relative overflow-hidden">
         <div className="container mx-auto px-4 md:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-14 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-10 items-center">
             <motion.div
               className="relative rounded-xl overflow-hidden aspect-[4/3]"
               initial={{ opacity: 0, x: -30 }}
@@ -141,7 +141,7 @@ const GurManiaPage = () => {
             >
               <h2 className="font-display text-2xl md:text-3xl tracking-[0.1em] mb-4">{t.about.title}</h2>
               <div className="w-10 h-px bg-gold mb-5" />
-              <p className="font-body text-gurmania-foreground/60 text-sm leading-relaxed mb-8">
+              <p className="font-body text-gurmania-foreground/60 text-sm leading-relaxed mb-5">
                 {t.about.text}
               </p>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
@@ -170,7 +170,7 @@ const GurManiaPage = () => {
       </section>
 
       {/* ═══════ Categories ═══════ */}
-      <section className="py-14 md:py-20">
+      <section className="py-10 md:py-14">
         <div className="container mx-auto px-4 md:px-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-5">
             {[
@@ -187,7 +187,7 @@ const GurManiaPage = () => {
               >
                 <Link
                   to="/gurmania/catalog"
-                  className="group relative aspect-[4/5] md:aspect-[3/4] overflow-hidden rounded-xl block"
+                  className="group relative aspect-[5/4] md:aspect-[4/3] overflow-hidden rounded-xl block"
                 >
                   <img src={cat.img} alt={cat.label} className="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
                   <div className="absolute inset-0 bg-gradient-to-t from-gurmania via-gurmania/30 to-transparent opacity-80" />
@@ -203,9 +203,9 @@ const GurManiaPage = () => {
       </section>
 
       {/* ═══════ Popular Products ═══════ */}
-      <section className="py-14 md:py-20 bg-gurmania-surface">
+      <section className="py-10 md:py-14 bg-gurmania-surface">
         <div className="container mx-auto px-4 md:px-8">
-          <div className="flex items-center justify-between mb-8">
+          <div className="flex items-center justify-between mb-5">
             <h2 className="font-display text-xl md:text-2xl tracking-[0.1em]">
               {lang === "RU" ? "Популярное" : lang === "AZ" ? "Populyar" : "Popular"}
             </h2>
@@ -245,9 +245,9 @@ const GurManiaPage = () => {
       </section>
 
       {/* ═══════ Promotions ═══════ */}
-      <section className="py-14 md:py-20">
+      <section className="py-10 md:py-14">
         <div className="container mx-auto px-4 md:px-8">
-          <div className="flex items-center justify-between mb-8">
+          <div className="flex items-center justify-between mb-5">
             <h2 className="font-display text-xl md:text-2xl tracking-[0.1em]">{t.promos.title}</h2>
             <Link to="/gurmania/promos" className="font-body text-gold/70 text-xs tracking-wider hover:text-gold transition-colors flex items-center gap-1">
               {lang === "RU" ? "Все" : lang === "AZ" ? "Hamısı" : "View all"} <ChevronRight className="w-3 h-3" />
@@ -288,18 +288,18 @@ const GurManiaPage = () => {
       </section>
 
       {/* ═══════ Gourmet Club ═══════ */}
-      <section className="py-14 md:py-20 bg-gurmania-surface relative overflow-hidden">
+      <section className="py-10 md:py-14 bg-gurmania-surface relative overflow-hidden">
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold/20 to-transparent" />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-gold/[0.02] rounded-full blur-3xl" />
         <div className="container mx-auto px-4 md:px-8 relative z-10 text-center">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-            <div className="w-14 h-14 rounded-full bg-gold/10 flex items-center justify-center mx-auto mb-6">
-              <Crown className="w-7 h-7 text-gold" />
+            <div className="w-12 h-12 rounded-full bg-gold/10 flex items-center justify-center mx-auto mb-4">
+              <Crown className="w-6 h-6 text-gold" />
             </div>
             <h2 className="font-display text-2xl md:text-3xl tracking-[0.1em] mb-2">{t.club.title}</h2>
-            <p className="font-display text-gold/70 text-lg tracking-[0.2em] mb-10">{t.club.subtitle}</p>
+            <p className="font-display text-gold/70 text-lg tracking-[0.2em] mb-6">{t.club.subtitle}</p>
           </motion.div>
-          <div className="grid grid-cols-3 gap-4 max-w-xl mx-auto mb-10">
+          <div className="grid grid-cols-3 gap-4 max-w-xl mx-auto mb-6">
             {[
               { icon: Star, label: t.club.p1 },
               { icon: Gift, label: t.club.p2 },
@@ -325,9 +325,9 @@ const GurManiaPage = () => {
       </section>
 
       {/* ═══════ Events ═══════ */}
-      <section className="py-14 md:py-20">
+      <section className="py-10 md:py-14">
         <div className="container mx-auto px-4 md:px-8">
-          <h2 className="font-display text-xl md:text-2xl tracking-[0.1em] mb-8">{t.events.title}</h2>
+          <h2 className="font-display text-xl md:text-2xl tracking-[0.1em] mb-5">{t.events.title}</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {mockEvents.map((event, i) => (
               <motion.div
@@ -356,7 +356,7 @@ const GurManiaPage = () => {
       </section>
 
       {/* ═══════ Subscribe ═══════ */}
-      <section className="py-14 md:py-20 bg-gurmania-surface">
+      <section className="py-10 md:py-14 bg-gurmania-surface">
         <div className="container mx-auto px-4 md:px-8">
           <motion.div
             className="max-w-lg mx-auto text-center"
