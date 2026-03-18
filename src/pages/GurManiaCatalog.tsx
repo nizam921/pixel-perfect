@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { SlidersHorizontal, X, Star, ChevronDown } from "lucide-react";
 import GurManiaLayout from "@/components/GurManiaLayout";
 import { Lang, gmContent } from "@/lib/i18n";
-import { mockProducts, countries, categories, wineTypes, formatPriceUnit, getPerKgPrice } from "@/lib/mock-data";
+import { mockProducts, mockPromos, countries, categories, wineTypes, formatPriceUnit, getPerKgPrice } from "@/lib/mock-data";
 
 const GurManiaCatalog = () => {
   const [lang, setLang] = useState<Lang>("EN");
