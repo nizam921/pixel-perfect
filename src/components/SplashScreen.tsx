@@ -7,9 +7,9 @@ import innvinoLogo from "@/assets/innvino-logo-clean.png";
 const languages = ["AZ", "RU", "EN"] as const;
 type Lang = (typeof languages)[number];
 
-const content: Record<Lang, { choose: string; gurSub: string; gurTag: string; gurBtn: string; innSub: string; innTag: string; innBtn: string }> = {
+const content: Record<Lang, { choose: [string, string, string]; gurSub: string; gurTag: string; gurBtn: string; innSub: string; innTag: string; innBtn: string }> = {
   AZ: {
-    choose: "YOLUNUZU SEÇİN",
+    choose: ["Yolunuzu", "Seçin", ""],
     gurSub: "Premium Şərablar · Pendirlər · Delikatesslər",
     gurTag: "1980-ci ildən şərab butiki",
     gurBtn: "Kəşf et",
@@ -18,7 +18,7 @@ const content: Record<Lang, { choose: string; gurSub: string; gurTag: string; gu
     innBtn: "Daha çox",
   },
   RU: {
-    choose: "ВЫБЕРИТЕ СВОЙ ПУТЬ",
+    choose: ["Выберите", "Свой", "Путь"],
     gurSub: "Премиум Вина · Сыры · Деликатесы",
     gurTag: "Винный бутик с 1980 года",
     gurBtn: "Войти",
@@ -27,7 +27,7 @@ const content: Record<Lang, { choose: string; gurSub: string; gurTag: string; gu
     innBtn: "Узнать больше",
   },
   EN: {
-    choose: "CHOOSE YOUR EXPERIENCE",
+    choose: ["Choose", "Your", "Experience"],
     gurSub: "Premium Wines · Cheeses · Delicacies",
     gurTag: "Wine Boutique since 1980",
     gurBtn: "Explore",
@@ -101,8 +101,8 @@ const SplashScreen = () => {
             exit={{ opacity: 0, scale: 0.9 }}
             transition={{ delay: 0.8, duration: 0.8 }}
           >
-            <p className="font-display text-gold text-base tracking-[0.4em] drop-shadow-[0_2px_8px_rgba(201,168,76,0.4)]">
-              {t.choose}
+            <p className="font-display text-gold text-lg tracking-[0.4em] uppercase drop-shadow-[0_2px_8px_rgba(201,168,76,0.4)] leading-relaxed">
+              {t.choose[0]}<br/>{t.choose[1]}<br/>{t.choose[2]}
             </p>
           </motion.div>
         )}
@@ -285,8 +285,8 @@ const SplashScreen = () => {
               exit={{ opacity: 0 }}
               transition={{ duration: 0.3 }}
             >
-              <span className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 font-display text-gold text-[10px] tracking-[0.4em] bg-gurmania/90 px-4 py-1 whitespace-nowrap">
-                {t.choose}
+              <span className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 font-display text-gold text-[10px] tracking-[0.4em] uppercase bg-gurmania/90 px-4 py-2 whitespace-nowrap leading-relaxed text-center">
+                {t.choose[0]}<br/>{t.choose[1]}<br/>{t.choose[2]}
               </span>
             </motion.div>
           )}
