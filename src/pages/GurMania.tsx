@@ -144,7 +144,7 @@ const GurManiaPage = () => {
               </div>
 
               {/* Mobile loyalty card */}
-              <div className="lg:hidden mt-6 bg-gurmania/60 backdrop-blur-xl border border-gold/15 rounded-xl p-4 text-left">
+              <div className="md:hidden mt-6 bg-gurmania/60 backdrop-blur-xl border border-gold/15 rounded-xl p-4 text-left">
                 <div className="flex items-center gap-2 mb-3">
                   <CreditCard className="w-4 h-4 text-gold" />
                   <h3 className="font-display text-xs tracking-[0.15em] text-gold">{t.loyalty.title}</h3>
