@@ -13,6 +13,10 @@ export default {
       },
     },
     extend: {
+      fontFamily: {
+        display: ['"Playfair Display"', 'serif'],
+        body: ['"Cormorant Garamond"', 'serif'],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -46,6 +50,18 @@ export default {
         card: {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
+        },
+        gurmania: {
+          DEFAULT: "hsl(var(--gurmania-bg))",
+          foreground: "hsl(var(--gurmania-fg))",
+        },
+        innvino: {
+          DEFAULT: "hsl(var(--innvino-bg))",
+          foreground: "hsl(var(--innvino-fg))",
+        },
+        gold: {
+          DEFAULT: "hsl(var(--gold))",
+          glow: "hsl(var(--gold-glow))",
         },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
