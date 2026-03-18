@@ -290,36 +290,7 @@ const GurManiaPage = () => {
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.04 }}
               >
-                <Link
-                  to={`/gurmania/product/${promo.product.id}`}
-                  className="bg-gradient-to-b from-gurmania-surface-light to-gurmania border border-gold/8 rounded-lg overflow-hidden group block hover:border-gold/20 transition-all duration-500 relative"
-                >
-                  <div className="absolute top-2 left-2 bg-wine-red text-gurmania-foreground font-display text-[11px] tracking-wider px-2.5 py-0.5 rounded-full z-10">
-                    SALE
-                  </div>
-                  <div className="absolute top-2 right-2 bg-wine-red text-gurmania-foreground font-display text-[11px] tracking-wider px-2.5 py-0.5 rounded-full z-10">
-                    -{promo.discount}%
-                  </div>
-                  <div className="aspect-square overflow-hidden">
-                    <img src={promo.product.image} alt={promo.product.name} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
-                  </div>
-                  <div className="p-3 h-[88px] flex flex-col justify-between">
-                    <div>
-                      <h4 className="font-display text-sm tracking-wide mb-1 group-hover:text-gold transition-colors line-clamp-1">{promo.product.name}</h4>
-                      <p className="font-body text-gurmania-text-secondary/50 text-[11px] mb-2">{promo.product.region}</p>
-                    </div>
-                    <div>
-                      <div className="flex items-center gap-1.5">
-                        <span className="font-display text-gold text-base">{promo.product.price} ₼</span>
-                        {formatPriceUnit(promo.product, lang) && <span className="font-body text-gurmania-text-secondary/40 text-[10px]">{formatPriceUnit(promo.product, lang)}</span>}
-                        {promo.product.oldPrice && <span className="font-body text-gurmania-text-secondary/40 text-[11px] line-through">{promo.product.oldPrice} ₼</span>}
-                      </div>
-                      {getPerKgPrice(promo.product) && (
-                        <p className="font-body text-gurmania-text-secondary/30 text-[10px] mt-0.5">{getPerKgPrice(promo.product)} ₼ {lang === "RU" ? "/ кг" : "/ kg"}</p>
-                      )}
-                    </div>
-                  </div>
-                </Link>
+                <ProductCard product={promo.product} lang={lang} />
               </motion.div>
             ))}
           </div>
