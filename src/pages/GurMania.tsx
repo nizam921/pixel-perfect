@@ -288,16 +288,16 @@ const GurManiaPage = () => {
       </section>
 
       {/* ═══════ Gourmet Club ═══════ */}
-      <section className="py-14 md:py-20 bg-gurmania-surface relative overflow-hidden">
+      <section className="py-10 md:py-14 bg-gurmania-surface relative overflow-hidden">
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold/20 to-transparent" />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-gold/[0.02] rounded-full blur-3xl" />
         <div className="container mx-auto px-4 md:px-8 relative z-10 text-center">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-            <div className="w-14 h-14 rounded-full bg-gold/10 flex items-center justify-center mx-auto mb-6">
-              <Crown className="w-7 h-7 text-gold" />
+            <div className="w-12 h-12 rounded-full bg-gold/10 flex items-center justify-center mx-auto mb-4">
+              <Crown className="w-6 h-6 text-gold" />
             </div>
             <h2 className="font-display text-2xl md:text-3xl tracking-[0.1em] mb-2">{t.club.title}</h2>
-            <p className="font-display text-gold/70 text-lg tracking-[0.2em] mb-10">{t.club.subtitle}</p>
+            <p className="font-display text-gold/70 text-lg tracking-[0.2em] mb-6">{t.club.subtitle}</p>
           </motion.div>
           <div className="grid grid-cols-3 gap-4 max-w-xl mx-auto mb-10">
             {[
