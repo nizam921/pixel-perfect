@@ -230,11 +230,11 @@ const GurManiaPage = () => {
                     <img src={product.image} alt={product.name} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
                   </div>
                   <div className="p-3">
-                    <h4 className="font-display text-xs tracking-wide mb-1 group-hover:text-gold transition-colors line-clamp-1">{product.name}</h4>
-                    <p className="font-body text-gurmania-text-secondary/50 text-[10px] mb-2">{product.region}</p>
+                    <h4 className="font-display text-sm tracking-wide mb-1 group-hover:text-gold transition-colors line-clamp-1">{product.name}</h4>
+                    <p className="font-body text-gurmania-text-secondary/50 text-[11px] mb-2">{product.region}</p>
                     <div className="flex items-center gap-1.5">
-                      <span className="font-display text-gold text-sm">{product.price} ₼</span>
-                      {product.oldPrice && <span className="font-body text-gurmania-text-secondary/40 text-[10px] line-through">{product.oldPrice} ₼</span>}
+                      <span className="font-display text-gold text-base">{product.price} ₼</span>
+                      {product.oldPrice && <span className="font-body text-gurmania-text-secondary/40 text-[11px] line-through">{product.oldPrice} ₼</span>}
                     </div>
                   </div>
                 </Link>
