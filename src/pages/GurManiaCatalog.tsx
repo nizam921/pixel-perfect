@@ -224,6 +224,7 @@ const GurManiaCatalog = () => {
                       <div className="flex items-center justify-between">
                         <div className="flex items-center gap-1.5">
                           <span className="font-display text-gold text-base">{product.price} ₼</span>
+                          {formatPriceUnit(product, lang) && <span className="font-body text-gurmania-text-secondary/40 text-[10px]">{formatPriceUnit(product, lang)}</span>}
                           {product.oldPrice && <span className="font-body text-gurmania-text-secondary/30 text-[11px] line-through">{product.oldPrice} ₼</span>}
                         </div>
                         <div className="flex items-center gap-0.5">
@@ -231,6 +232,9 @@ const GurManiaCatalog = () => {
                           <span className="font-body text-gurmania-text-secondary/50 text-[10px]">{product.rating}</span>
                         </div>
                       </div>
+                      {getPerKgPrice(product) && (
+                        <p className="font-body text-gurmania-text-secondary/30 text-[10px] mt-0.5">{getPerKgPrice(product)} ₼ {lang === "RU" ? "/ кг" : "/ kg"}</p>
+                      )}
                     </div>
                   </Link>
                 </motion.div>
