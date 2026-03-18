@@ -111,7 +111,7 @@ const GurManiaPage = () => {
         </div>
 
         {/* Hero content — centered */}
-        <div className="absolute inset-0 flex items-center z-10 px-4 lg:pl-[290px]">
+        <div className="absolute inset-0 flex items-center z-10 px-4 md:pl-[240px] lg:pl-[290px]">
           <div className="container mx-auto px-4 md:px-8">
             <div className="text-center max-w-3xl mx-auto">
               <span className="font-logo text-5xl md:text-7xl text-gold mb-4 drop-shadow-2xl inline-block">GurMania</span>
