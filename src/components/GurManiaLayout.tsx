@@ -45,11 +45,9 @@ const GurManiaLayout = ({ lang, setLang, children }: Props) => {
       >
         <div className="container mx-auto px-4 md:px-8 flex items-center justify-between h-16 md:h-20">
           <Link to="/gurmania" className="group">
-            <img
-              src={gurmaniaLogo}
-              alt="GurMania"
-              className="h-10 md:h-12 rounded-sm transition-all duration-500 group-hover:brightness-125"
-            />
+            <span className="font-logo text-3xl md:text-4xl text-gold transition-all duration-500 group-hover:text-gold-glow">
+              GurMania
+            </span>
           </Link>
 
           {/* Desktop nav */}
@@ -183,7 +181,7 @@ const GurManiaLayout = ({ lang, setLang, children }: Props) => {
         <div className="container mx-auto px-4 md:px-8 py-16 relative z-10">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
             <div className="md:col-span-1">
-              <img src={gurmaniaLogo} alt="GurMania" className="h-12 mb-5 rounded-sm" />
+              <span className="font-logo text-4xl text-gold">GurMania</span>
               <p className="font-body text-gurmania-text-secondary text-sm leading-relaxed">
                 {t.hero.subtitle}
               </p>
