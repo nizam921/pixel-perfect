@@ -10,9 +10,9 @@ const GurManiaContacts = () => {
   const [formData, setFormData] = useState({ name: "", email: "", message: "" });
 
   const t = {
-    AZ: { title: "Əlaqə", name: "Adınız", email: "E-poçt", message: "Mesajınız", send: "Göndər", address: "Bakı, Azərbaycan", hours: "BE–Ş: 10:00–22:00 | B: 12:00–20:00", info: "Bizimlə əlaqə saxlayın" },
-    RU: { title: "Контакты", name: "Ваше имя", email: "Email", message: "Сообщение", send: "Отправить", address: "Баку, Азербайджан", hours: "Пн–Сб: 10:00–22:00 | Вс: 12:00–20:00", info: "Свяжитесь с нами" },
-    EN: { title: "Contacts", name: "Your name", email: "Email", message: "Message", send: "Send", address: "Baku, Azerbaijan", hours: "Mon–Sat: 10:00–22:00 | Sun: 12:00–20:00", info: "Get in touch" },
+    AZ: { title: "Əlaqə", name: "Adınız", email: "E-poçt", message: "Mesajınız", send: "Göndər", address: "Nizami 98, Bakı, Azərbaycan", hours: "Hər gün: 10:00–22:00", info: "Bizimlə əlaqə saxlayın" },
+    RU: { title: "Контакты", name: "Ваше имя", email: "Email", message: "Сообщение", send: "Отправить", address: "Низами 98, Баку, Азербайджан", hours: "Ежедневно: 10:00–22:00", info: "Свяжитесь с нами" },
+    EN: { title: "Contacts", name: "Your name", email: "Email", message: "Message", send: "Send", address: "Nizami 98, Baku, Azerbaijan", hours: "Daily: 10:00–22:00", info: "Get in touch" },
   }[lang];
 
   return (
