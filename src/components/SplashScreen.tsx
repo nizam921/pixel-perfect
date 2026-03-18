@@ -184,7 +184,7 @@ const SplashScreen = () => {
 
           <motion.div
             className="relative z-10 h-full flex flex-col items-center justify-center"
-            style={{ paddingLeft: '30%' }}
+            style={{ paddingLeft: '40%' }}
             animate={selected === "inn" ? { paddingLeft: '0%' } : {}}
             transition={{ duration: 0.7 }}
           >
