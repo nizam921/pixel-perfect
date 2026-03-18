@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { Clock } from "lucide-react";
 import GurManiaLayout from "@/components/GurManiaLayout";
 import { Lang, gmContent } from "@/lib/i18n";
-import { mockProducts, mockPromos } from "@/lib/mock-data";
+import { mockProducts, mockPromos, formatPriceUnit, getPerKgPrice } from "@/lib/mock-data";
 
 const GurManiaPromos = () => {
   const [lang, setLang] = useState<Lang>("EN");
