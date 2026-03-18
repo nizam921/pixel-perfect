@@ -141,7 +141,7 @@ const GurManiaPage = () => {
             >
               <h2 className="font-display text-2xl md:text-3xl tracking-[0.1em] mb-4">{t.about.title}</h2>
               <div className="w-10 h-px bg-gold mb-5" />
-              <p className="font-body text-gurmania-foreground/60 text-sm leading-relaxed mb-8">
+              <p className="font-body text-gurmania-foreground/60 text-sm leading-relaxed mb-5">
                 {t.about.text}
               </p>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
