@@ -247,31 +247,37 @@ const GurManiaPage = () => {
       {/* ═══════ Promotions ═══════ */}
       <section className="py-14 md:py-20">
         <div className="container mx-auto px-4 md:px-8">
-          <h2 className="font-display text-xl md:text-2xl tracking-[0.1em] mb-8">{t.promos.title}</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {promoProducts.map((promo, i) => (
+          <div className="flex items-center justify-between mb-8">
+            <h2 className="font-display text-xl md:text-2xl tracking-[0.1em]">{t.promos.title}</h2>
+            <Link to="/gurmania/promos" className="font-body text-gold/70 text-xs tracking-wider hover:text-gold transition-colors flex items-center gap-1">
+              {lang === "RU" ? "Все" : lang === "AZ" ? "Hamısı" : "View all"} <ChevronRight className="w-3 h-3" />
+            </Link>
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
+            {promoProducts.slice(0, 8).map((promo, i) => (
               <motion.div
                 key={promo.id}
                 initial={{ opacity: 0, y: 15 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: i * 0.08 }}
+                transition={{ delay: i * 0.04 }}
               >
                 <Link
                   to={`/gurmania/product/${promo.product.id}`}
-                  className="bg-gradient-to-b from-gurmania-surface to-gurmania border border-gold/10 rounded-lg overflow-hidden relative group block hover:border-gold/20 transition-all duration-500"
+                  className="bg-gradient-to-b from-gurmania-surface-light to-gurmania border border-gold/8 rounded-lg overflow-hidden group block hover:border-gold/20 transition-all duration-500 relative"
                 >
-                   <div className="absolute top-3 right-3 bg-wine-red text-gurmania-foreground font-display text-xs tracking-wider px-3 py-1 rounded-full z-10">
+                  <div className="absolute top-2 right-2 bg-wine-red text-gurmania-foreground font-display text-[11px] tracking-wider px-2.5 py-0.5 rounded-full z-10">
                     -{promo.discount}%
                   </div>
-                  <div className="aspect-[4/3] overflow-hidden">
+                  <div className="aspect-square overflow-hidden">
                     <img src={promo.product.image} alt={promo.product.name} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
                   </div>
-                  <div className="p-4">
-                    <h4 className="font-display text-base tracking-wide mb-2 group-hover:text-gold transition-colors">{promo.product.name}</h4>
-                    <div className="flex items-center gap-2">
-                      <span className="font-display text-gold text-xl">{promo.product.price} ₼</span>
-                      {promo.product.oldPrice && <span className="font-body text-gurmania-text-secondary/40 line-through text-sm">{promo.product.oldPrice} ₼</span>}
+                  <div className="p-3">
+                    <h4 className="font-display text-sm tracking-wide mb-1 group-hover:text-gold transition-colors line-clamp-1">{promo.product.name}</h4>
+                    <p className="font-body text-gurmania-text-secondary/50 text-[11px] mb-2">{promo.product.region}</p>
+                    <div className="flex items-center gap-1.5">
+                      <span className="font-display text-gold text-base">{promo.product.price} ₼</span>
+                      {promo.product.oldPrice && <span className="font-body text-gurmania-text-secondary/40 text-[11px] line-through">{promo.product.oldPrice} ₼</span>}
                     </div>
                   </div>
                 </Link>
