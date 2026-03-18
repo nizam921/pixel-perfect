@@ -92,7 +92,7 @@ const SplashScreen = () => {
             backgroundSize: '32px 32px'
           }} />
 
-          <div className="relative z-10 h-full flex flex-col items-center justify-center pr-[15%]">
+          <div className="relative z-10 h-full flex flex-col items-center justify-center" style={{ paddingRight: '30%' }}>
             <motion.img
               src={gurmaniaLogo}
               alt="GurMania"
