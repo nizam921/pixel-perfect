@@ -58,7 +58,7 @@ const GurManiaPage = () => {
         <div className="absolute inset-0 bg-gradient-to-r from-gurmania/40 via-transparent to-gurmania/40" />
 
         {/* Loyalty ribbon — vertical strip on left side */}
-        <div className="absolute top-0 left-0 bottom-0 z-20 hidden lg:block w-[270px]">
+        <div className="absolute top-0 left-0 bottom-0 z-20 hidden md:block md:w-[220px] lg:w-[270px]">
           <div className="h-full bg-gradient-to-b from-gurmania/90 via-gurmania/70 to-gurmania/90 backdrop-blur-xl border-r border-gold/10">
             <div className="flex flex-col items-center justify-center h-full px-5 py-20 gap-6">
               <div className="flex items-center gap-2">
