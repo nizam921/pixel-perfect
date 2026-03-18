@@ -31,7 +31,7 @@ export const gmContent: Record<Lang, {
     events: { title: "Yaxınlaşan tədbirlər", btn: "Bütün tədbirlər" },
     about: { title: "Haqqımızda", text: "GurMania — 1980-ci ildən Bakının premium şərab butiki. Premium məhsullar və alkoqol dünyasının ən seçilmiş kolleksiyası. İtaliya, Fransa, İspaniya, Gürcüstan və dünyanın 20-dən çox ölkəsindən şərablar, pendirlər və delikatesslər.", since: "1980-ci ildən", products: "2000+ məhsul", countries: "20+ ölkə", clients: "50K+ müştəri" },
     subscribe: { title: "Yeniliklərdən xəbərdar olun", subtitle: "Eksklüziv təkliflər və tədbirlər haqqında ilk siz bilin", placeholder: "E-poçt ünvanınız", btn: "Abunə ol", success: "Uğurla abunə oldunuz!" },
-    footer: { rights: "Bütün hüquqlar qorunur", address: "Bakı, Azərbaycan" },
+    footer: { rights: "Bütün hüquqlar qorunur", address: "Nizami 98, Bakı, Azərbaycan" },
     catalog: { title: "Bizim kataloq", filterTitle: "Filtrlər", category: "Kateqoriya", country: "Ölkə", priceRange: "Qiymət aralığı", sort: "Sıralama", all: "Hamısı", byPrice: "Qiymətə görə", byPopularity: "Populyarlığa görə", byNew: "Yeniyə görə" },
     product: { addToCart: "Səbətə əlavə et", clubPrice: "Klub qiyməti", related: "Sizə də xoş gələ bilər", description: "Təsvir", characteristics: "Xüsusiyyətlər", region: "Region", year: "İl", grape: "Üzüm növü", volume: "Həcm" },
   },
