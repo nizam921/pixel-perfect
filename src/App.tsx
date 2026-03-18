@@ -7,6 +7,11 @@ import Index from "./pages/Index.tsx";
 import GurManiaPage from "./pages/GurMania.tsx";
 import GurManiaCatalog from "./pages/GurManiaCatalog.tsx";
 import GurManiaProduct from "./pages/GurManiaProduct.tsx";
+import GurManiaPromos from "./pages/GurManiaPromos.tsx";
+import GurManiaEvents from "./pages/GurManiaEvents.tsx";
+import GurManiaGallery from "./pages/GurManiaGallery.tsx";
+import GurManiaAuction from "./pages/GurManiaAuction.tsx";
+import GurManiaContacts from "./pages/GurManiaContacts.tsx";
 import InnVinoPage from "./pages/InnVino.tsx";
 import NotFound from "./pages/NotFound.tsx";
 
@@ -23,6 +28,11 @@ const App = () => (
           <Route path="/gurmania" element={<GurManiaPage />} />
           <Route path="/gurmania/catalog" element={<GurManiaCatalog />} />
           <Route path="/gurmania/product/:id" element={<GurManiaProduct />} />
+          <Route path="/gurmania/promos" element={<GurManiaPromos />} />
+          <Route path="/gurmania/events" element={<GurManiaEvents />} />
+          <Route path="/gurmania/gallery" element={<GurManiaGallery />} />
+          <Route path="/gurmania/auction" element={<GurManiaAuction />} />
+          <Route path="/gurmania/contacts" element={<GurManiaContacts />} />
           <Route path="/innvino" element={<InnVinoPage />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
