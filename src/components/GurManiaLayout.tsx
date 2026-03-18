@@ -45,9 +45,7 @@ const GurManiaLayout = ({ lang, setLang, children }: Props) => {
       >
         <div className="container mx-auto px-4 md:px-8 flex items-center justify-between h-16 md:h-20">
           <Link to="/gurmania" className="group">
-            <span className="font-logo text-3xl md:text-4xl text-gold transition-all duration-500 group-hover:text-gold-glow">
-              GurMania
-            </span>
+            <img src={gurmaniaLogoText} alt="GurMania" className="h-8 md:h-10 transition-all duration-500 group-hover:brightness-125" />
           </Link>
 
           {/* Desktop nav */}
