@@ -187,7 +187,7 @@ const GurManiaPage = () => {
               >
                 <Link
                   to="/gurmania/catalog"
-                  className="group relative aspect-[4/5] md:aspect-[3/4] overflow-hidden rounded-xl block"
+                  className="group relative aspect-[5/4] md:aspect-[4/3] overflow-hidden rounded-xl block"
                 >
                   <img src={cat.img} alt={cat.label} className="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
                   <div className="absolute inset-0 bg-gradient-to-t from-gurmania via-gurmania/30 to-transparent opacity-80" />
