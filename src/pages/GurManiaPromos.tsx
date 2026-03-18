@@ -37,18 +37,18 @@ const GurManiaPromos = () => {
                 to={`/gurmania/product/${promo.product.id}`}
                 className="bg-gradient-to-b from-gurmania-surface to-gurmania border border-gold/10 rounded-xl overflow-hidden relative group block hover:border-gold/20 transition-all duration-500"
               >
-                <div className="absolute top-3 left-3 bg-wine-red text-gurmania-foreground font-display text-[11px] tracking-wider px-3 py-1 rounded-full z-10 shadow-lg">
+                 <div className="absolute top-3 left-3 bg-wine-red text-gurmania-foreground font-display text-xs tracking-wider px-3 py-1 rounded-full z-10 shadow-lg">
                   -{promo.discount}%
                 </div>
                 <div className="aspect-[4/3] overflow-hidden">
                   <img src={promo.product.image} alt={promo.product.name} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
                 </div>
                 <div className="p-5">
-                  <h4 className="font-display text-sm tracking-wide mb-2 group-hover:text-gold transition-colors">{promo.product.name}</h4>
+                  <h4 className="font-display text-base tracking-wide mb-2 group-hover:text-gold transition-colors">{promo.product.name}</h4>
                   <p className="font-body text-gurmania-text-secondary/50 text-xs mb-3">{promo.product.region}, {promo.product.country}</p>
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-2">
-                      <span className="font-display text-gold text-xl">{promo.product.price} ₼</span>
+                      <span className="font-display text-gold text-2xl">{promo.product.price} ₼</span>
                       {promo.product.oldPrice && (
                         <span className="font-body text-gurmania-text-secondary/40 line-through">{promo.product.oldPrice} ₼</span>
                       )}
