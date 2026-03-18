@@ -131,8 +131,8 @@ const GurManiaLayout = ({ lang, setLang, children }: Props) => {
                     onClick={() => setMenuOpen(false)}
                     className={`font-display text-xl tracking-[0.25em] transition-colors duration-300 ${
                       location.pathname === item.path
-                        ? "text-gold"
-                        : "text-gurmania-foreground/70 hover:text-gold"
+                        ? "text-white"
+                        : "text-gurmania-foreground/70 hover:text-white"
                     }`}
                   >
                     {item.label}
