@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { Clock } from "lucide-react";
 import GurManiaLayout from "@/components/GurManiaLayout";
 import { Lang, gmContent } from "@/lib/i18n";
-import { mockProducts, mockPromos } from "@/lib/mock-data";
+import { mockProducts, mockPromos, formatPriceUnit, getPerKgPrice } from "@/lib/mock-data";
 
 const GurManiaPromos = () => {
   const [lang, setLang] = useState<Lang>("EN");
@@ -37,9 +37,14 @@ const GurManiaPromos = () => {
                 to={`/gurmania/product/${promo.product.id}`}
                 className="bg-gradient-to-b from-gurmania-surface to-gurmania border border-gold/10 rounded-xl overflow-hidden relative group block hover:border-gold/20 transition-all duration-500"
               >
-                 <div className="absolute top-3 left-3 bg-wine-red text-gurmania-foreground font-display text-xs tracking-wider px-3 py-1 rounded-full z-10 shadow-lg">
-                  -{promo.discount}%
-                </div>
+                 <div className="absolute top-3 left-3 flex gap-2 z-10">
+                   <span className="bg-wine-red text-gurmania-foreground font-display text-xs tracking-wider px-3 py-1 rounded-full shadow-lg">
+                     SALE
+                   </span>
+                   <span className="bg-gurmania/70 backdrop-blur-sm text-gold font-display text-xs tracking-wider px-3 py-1 rounded-full shadow-lg">
+                     -{promo.discount}%
+                   </span>
+                 </div>
                 <div className="aspect-[4/3] overflow-hidden">
                   <img src={promo.product.image} alt={promo.product.name} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
                 </div>
@@ -49,6 +54,7 @@ const GurManiaPromos = () => {
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-2">
                       <span className="font-display text-gold text-2xl">{promo.product.price} ₼</span>
+                      {formatPriceUnit(promo.product, lang) && <span className="font-body text-gurmania-text-secondary/40 text-xs">{formatPriceUnit(promo.product, lang)}</span>}
                       {promo.product.oldPrice && (
                         <span className="font-body text-gurmania-text-secondary/40 line-through">{promo.product.oldPrice} ₼</span>
                       )}
@@ -60,6 +66,9 @@ const GurManiaPromos = () => {
                       </span>
                     </div>
                   </div>
+                  {getPerKgPrice(promo.product) && (
+                    <p className="font-body text-gurmania-text-secondary/30 text-[10px] mt-1">{getPerKgPrice(promo.product)} ₼ {lang === "RU" ? "/ кг" : "/ kg"}</p>
+                  )}
                 </div>
               </Link>
             </motion.div>

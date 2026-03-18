@@ -56,10 +56,24 @@ export interface Product {
   type?: "red" | "white" | "rose" | "orange";
   grape?: string;
   volume?: string;
+  priceUnit?: "per100g" | "perKg" | "perPiece";
   description: string;
   image: string;
   rating: number;
 }
+
+// Helper: categories where price is per 100g by default
+export const isWeightBasedCategory = (cat: string) => ["cheese", "meat"].includes(cat);
+export const formatPriceUnit = (product: Product, lang: string) => {
+  if (product.priceUnit === "perKg" || product.volume === "1kg") return lang === "RU" ? "/ кг" : lang === "AZ" ? "/ kq" : "/ kg";
+  if (isWeightBasedCategory(product.category) || product.priceUnit === "per100g") return lang === "RU" ? "/ 100г" : lang === "AZ" ? "/ 100q" : "/ 100g";
+  return "";
+};
+export const getPerKgPrice = (product: Product) => {
+  if (product.priceUnit === "perKg" || product.volume === "1kg") return null;
+  if (isWeightBasedCategory(product.category) || product.priceUnit === "per100g") return (product.price * 10).toFixed(2);
+  return null;
+};
 
 export interface Event {
   id: string;
@@ -98,7 +112,7 @@ export const mockProducts: Product[] = [
   { id: "5", name: "Comté Aged 18 months", region: "Jura", country: "France", year: 2024, price: 24.90, clubPrice: 23.66, category: "cheese", description: "Выдержанный сыр Конте с насыщенным ореховым вкусом и кристаллической текстурой.", image: productCheese2, rating: 4.7 },
   { id: "9", name: "Parmigiano Reggiano 24m", region: "Emilia-Romagna", country: "Italy", year: 2024, price: 32.00, clubPrice: 30.40, category: "cheese", description: "Подлинный Пармиджано Реджано 24-месячной выдержки с насыщенным умами.", image: productCheese3, rating: 4.8 },
   { id: "16", name: "Maasdam 45%", region: "Holland", country: "Netherlands", year: 2024, price: 5.70, clubPrice: 5.42, category: "cheese", description: "Голландский сыр Маасдам с характерными отверстиями и ореховым вкусом.", image: productCheese7, rating: 4.3 },
-  { id: "20", name: "Grana Padano Sole Luna", region: "Lombardy", country: "Italy", year: 2024, price: 187.00, clubPrice: 177.65, category: "cheese", volume: "1kg", description: "Премиальный итальянский Грана Падано 30-месячной выдержки.", image: productCheese4, rating: 4.9 },
+  { id: "20", name: "Grana Padano Sole Luna", region: "Lombardy", country: "Italy", year: 2024, price: 187.00, clubPrice: 177.65, category: "cheese", volume: "1kg", priceUnit: "perKg", description: "Премиальный итальянский Грана Падано 30-месячной выдержки.", image: productCheese4, rating: 4.9 },
   { id: "21", name: "Smoked Suluguni", region: "Caucasus", country: "Georgia", year: 2024, price: 3.20, clubPrice: 3.04, category: "cheese", description: "Копчёный сулугуни с характерным дымным ароматом.", image: productCheese5, rating: 4.4 },
   { id: "22", name: "Danish Blue Cheese", region: "Denmark", country: "Denmark", year: 2024, price: 6.60, clubPrice: 6.27, category: "cheese", description: "Датский голубой сыр с насыщенным острым вкусом.", image: productCheese6, rating: 4.5 },
   { id: "25", name: "Brie de Meaux AOC", region: "Île-de-France", country: "France", year: 2024, price: 12.50, clubPrice: 11.88, category: "cheese", description: "Классический французский бри с кремовой текстурой и грибными нотами.", image: productCheese, rating: 4.6 },
