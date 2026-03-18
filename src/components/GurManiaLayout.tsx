@@ -82,14 +82,14 @@ const GurManiaLayout = ({ lang, setLang, children }: Props) => {
                 </button>
               ))}
             </div>
-            <button className="text-gurmania-foreground/60 hover:text-gold transition-colors duration-300">
+            <button className="text-white/80 hover:text-white transition-colors duration-300">
               <ShoppingBag className="w-5 h-5" />
             </button>
-            <button className="text-gurmania-foreground/60 hover:text-gold transition-colors duration-300">
+            <button className="text-white/80 hover:text-white transition-colors duration-300">
               <User className="w-5 h-5" />
             </button>
             <button
-              className="lg:hidden text-gurmania-foreground/60 hover:text-gold"
+              className="lg:hidden text-white/80 hover:text-white"
               onClick={() => setMenuOpen(true)}
             >
               <Menu className="w-6 h-6" />
