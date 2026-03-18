@@ -95,16 +95,18 @@ const SplashScreen = () => {
       <AnimatePresence>
         {!isTransitioning && (
           <motion.div
-            className="hidden md:flex absolute z-40 text-center pointer-events-none items-center justify-center"
-            style={{ top: '50%', left: '50%', transform: 'translate(-50%, -50%)' }}
+            className="hidden md:flex absolute items-center justify-center pointer-events-none"
+            style={{ top: '50%', left: '50%', transform: 'translate(-50%, -50%)', zIndex: 60 }}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.9 }}
             transition={{ delay: 0.8, duration: 0.8 }}
           >
-            <p className="font-display text-gold text-sm tracking-[0.35em] uppercase drop-shadow-[0_2px_8px_rgba(201,168,76,0.4)] leading-[2]">
-              {t.choose[0]}<br/>{t.choose[1]}<br/>{t.choose[2]}
-            </p>
+            <div className="bg-gurmania/60 backdrop-blur-sm px-6 py-4 text-center">
+              <p className="font-display text-gold text-xs tracking-[0.35em] uppercase drop-shadow-[0_2px_8px_rgba(201,168,76,0.4)] leading-[2.2]">
+                {t.choose[0]}<br/>{t.choose[1]}<br/>{t.choose[2]}
+              </p>
+            </div>
           </motion.div>
         )}
       </AnimatePresence>
