@@ -54,15 +54,23 @@ export default {
         gurmania: {
           DEFAULT: "hsl(var(--gurmania-bg))",
           foreground: "hsl(var(--gurmania-fg))",
+          surface: "hsl(var(--gurmania-surface))",
+          "surface-light": "hsl(var(--gurmania-surface-light))",
+          "text-secondary": "hsl(var(--gurmania-text-secondary))",
         },
         innvino: {
           DEFAULT: "hsl(var(--innvino-bg))",
           foreground: "hsl(var(--innvino-fg))",
+          surface: "hsl(var(--innvino-surface))",
+          warm: "hsl(var(--innvino-warm))",
+          "text-light": "hsl(var(--innvino-text-light))",
         },
         gold: {
           DEFAULT: "hsl(var(--gold))",
           glow: "hsl(var(--gold-glow))",
         },
+        "wine-red": "hsl(var(--wine-red))",
+        burgundy: "hsl(var(--burgundy))",
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",

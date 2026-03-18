@@ -27,10 +27,18 @@
 
     --gurmania-bg: 0 0% 0%;
     --gurmania-fg: 30 29% 94%;
+    --gurmania-surface: 0 0% 7%;
+    --gurmania-surface-light: 0 0% 10%;
+    --gurmania-text-secondary: 0 0% 60%;
     --innvino-bg: 0 0% 100%;
     --innvino-fg: 0 0% 15%;
+    --innvino-surface: 0 0% 98%;
+    --innvino-warm: 30 29% 94%;
+    --innvino-text-light: 0 0% 47%;
     --gold: 43 52% 54%;
     --gold-glow: 43 60% 62%;
+    --wine-red: 350 65% 34%;
+    --burgundy: 350 55% 37%;
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
