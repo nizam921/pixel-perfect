@@ -212,9 +212,9 @@ const GurManiaLayout = ({ lang, setLang, children }: Props) => {
               </h4>
               <div className="space-y-2.5">
                 <p className="font-body text-gurmania-text-secondary text-sm">{t.footer.address}</p>
-                <p className="font-body text-gurmania-text-secondary text-sm">+994 12 000 00 00</p>
+                <p className="font-body text-gurmania-text-secondary text-sm">+994 50 262 05 88</p>
                 <p className="font-body text-gold/70 text-sm hover:text-gold transition-colors cursor-pointer">
-                  info@gurmania.az
+                  marketing@gurmania.az
                 </p>
               </div>
             </div>
