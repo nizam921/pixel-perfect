@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, ShoppingBag, User } from "lucide-react";
-import gurmaniaLogo from "@/assets/gurmania-logo-dark.png";
+import gurmaniaLogoText from "@/assets/gurmania-logo-text.png";
 import { Lang, languages, gmContent } from "@/lib/i18n";
 
 interface Props {
