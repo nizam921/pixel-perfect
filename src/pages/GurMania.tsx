@@ -356,7 +356,7 @@ const GurManiaPage = () => {
       </section>
 
       {/* ═══════ Subscribe ═══════ */}
-      <section className="py-14 md:py-20 bg-gurmania-surface">
+      <section className="py-10 md:py-14 bg-gurmania-surface">
         <div className="container mx-auto px-4 md:px-8">
           <motion.div
             className="max-w-lg mx-auto text-center"
