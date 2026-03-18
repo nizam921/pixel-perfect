@@ -1,6 +1,6 @@
 import { useState, useMemo } from "react";
 import { Link } from "react-router-dom";
-import { SlidersHorizontal, X } from "lucide-react";
+import { SlidersHorizontal, X, Star } from "lucide-react";
 import GurManiaLayout from "@/components/GurManiaLayout";
 import { Lang, gmContent } from "@/lib/i18n";
 import { mockProducts, countries, categories, wineTypes } from "@/lib/mock-data";
