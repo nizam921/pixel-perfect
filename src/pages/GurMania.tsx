@@ -245,9 +245,9 @@ const GurManiaPage = () => {
       </section>
 
       {/* ═══════ Promotions ═══════ */}
-      <section className="py-14 md:py-20">
+      <section className="py-10 md:py-14">
         <div className="container mx-auto px-4 md:px-8">
-          <div className="flex items-center justify-between mb-8">
+          <div className="flex items-center justify-between mb-5">
             <h2 className="font-display text-xl md:text-2xl tracking-[0.1em]">{t.promos.title}</h2>
             <Link to="/gurmania/promos" className="font-body text-gold/70 text-xs tracking-wider hover:text-gold transition-colors flex items-center gap-1">
               {lang === "RU" ? "Все" : lang === "AZ" ? "Hamısı" : "View all"} <ChevronRight className="w-3 h-3" />
