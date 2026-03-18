@@ -18,7 +18,7 @@ const ProductCard = ({ product, lang }: Props) => {
   return (
     <Link
       to={`/gurmania/product/${product.id}`}
-      className="bg-gradient-to-b from-gurmania-surface to-gurmania border border-gold/8 rounded-lg overflow-hidden group block hover:border-gold/20 transition-all duration-500"
+      className="bg-gradient-to-b from-gurmania-surface to-gurmania rounded-lg overflow-hidden group block hover:border-gold/20 transition-all duration-500"
     >
       <div className="aspect-square overflow-hidden relative">
         {product.oldPrice && (

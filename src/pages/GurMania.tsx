@@ -58,7 +58,7 @@ const GurManiaPage = () => {
         <div className="absolute inset-0 bg-gradient-to-r from-gurmania/40 via-transparent to-gurmania/40" />
 
         {/* Loyalty ribbon — vertical strip on left side */}
-        <div className="absolute top-0 left-0 bottom-0 z-20 hidden md:block md:w-[220px] lg:w-[270px]">
+        <div className="absolute top-0 left-0 bottom-0 z-20 hidden md:block md:w-[240px] lg:w-[300px]">
           <div className="h-full bg-gradient-to-b from-gurmania/90 via-gurmania/70 to-gurmania/90 backdrop-blur-xl border-r border-gold/10 relative overflow-hidden">
             {/* Falling stars */}
             {Array.from({ length: 12 }).map((_, i) => (
@@ -76,10 +76,10 @@ const GurManiaPage = () => {
                 ✦
               </span>
             ))}
-            <div className="flex flex-col items-center justify-center h-full px-5 py-20 gap-6 relative z-10">
+            <div className="flex flex-col items-center justify-center h-full px-6 py-20 gap-6 relative z-10">
               <div className="flex items-center gap-2">
-                <CreditCard className="w-4 h-4 text-gold" />
-                <h3 className="font-display text-[10px] tracking-[0.15em] text-gold">{t.loyalty.title}</h3>
+                <CreditCard className="w-5 h-5 text-gold" />
+                <h3 className="font-display text-xs tracking-[0.15em] text-gold">{t.loyalty.title}</h3>
               </div>
 
               <div className="w-full space-y-2">
@@ -87,9 +87,9 @@ const GurManiaPage = () => {
                   value={cardNumber}
                   onChange={(e) => setCardNumber(e.target.value)}
                   placeholder={t.loyalty.placeholder}
-                  className="w-full bg-gurmania/40 border border-gold/15 rounded-lg px-3 py-2 font-body text-[11px] text-gurmania-foreground placeholder:text-gurmania-foreground/30 focus:outline-none focus:border-gold/40 transition-colors"
+                  className="w-full bg-gurmania/40 border border-gold/15 rounded-lg px-3 py-2.5 font-body text-xs text-gurmania-foreground placeholder:text-gurmania-foreground/30 focus:outline-none focus:border-gold/40 transition-colors"
                 />
-                <button className="w-full text-gurmania bg-gold font-display text-[9px] tracking-[0.2em] px-4 py-2 rounded-lg hover:bg-gold-glow transition-colors">
+                <button className="w-full text-gurmania bg-gold font-display text-[10px] tracking-[0.2em] px-4 py-2.5 rounded-lg hover:bg-gold-glow transition-colors">
                   {t.loyalty.btn}
                 </button>
               </div>
@@ -103,22 +103,22 @@ const GurManiaPage = () => {
                   { icon: Crown, text: lang === "RU" ? "VIP доступ" : lang === "AZ" ? "VIP giriş" : "VIP Access" },
                 ].map((item, i) => (
                   <div key={i} className="flex items-center gap-2">
-                    <item.icon className="w-3 h-3 text-gold/50 flex-shrink-0" />
-                    <span className="font-body text-gurmania-foreground/50 text-[10px]">{item.text}</span>
+                    <item.icon className="w-3.5 h-3.5 text-gold/50 flex-shrink-0" />
+                    <span className="font-body text-gurmania-foreground/50 text-[11px]">{item.text}</span>
                   </div>
                 ))}
               </div>
 
               <div className="w-10 h-px bg-gradient-to-r from-transparent via-gold/30 to-transparent" />
 
-              <div className="w-full bg-gold/10 border border-gold/20 rounded-lg p-3 text-center">
-                <p className="font-display text-[10px] tracking-wider text-gold mb-1">
+              <div className="w-full bg-gold/10 border border-gold/20 rounded-lg p-3.5 text-center">
+                <p className="font-display text-[11px] tracking-wider text-gold mb-1">
                   {lang === "RU" ? "Клуб Гурманов" : lang === "AZ" ? "Gurmanlar Klubu" : "Gourmet Club"}
                 </p>
-                <p className="font-body text-gurmania-foreground/40 text-[10px] mb-2">
+                <p className="font-body text-gurmania-foreground/40 text-[11px] mb-2">
                   <span className="text-gold font-display">0.99 ₼</span>{lang === "RU" ? "/мес" : lang === "AZ" ? "/ay" : "/mo"}
                 </p>
-                <button className="w-full bg-gold text-gurmania font-display text-[8px] tracking-[0.2em] px-3 py-1.5 rounded-md hover:bg-gold-glow transition-colors">
+                <button className="w-full bg-gold text-gurmania font-display text-[9px] tracking-[0.2em] px-3 py-2 rounded-md hover:bg-gold-glow transition-colors">
                   {t.club.btn}
                 </button>
               </div>
@@ -127,7 +127,7 @@ const GurManiaPage = () => {
         </div>
 
         {/* Hero content — centered */}
-        <div className="absolute inset-0 flex items-center z-10 px-4 md:pl-[240px] lg:pl-[290px]">
+        <div className="absolute inset-0 flex items-center z-10 px-4 md:pl-[260px] lg:pl-[320px]">
           <div className="container mx-auto px-4 md:px-8">
             <div className="text-center max-w-3xl mx-auto">
               <span className="font-logo text-5xl md:text-7xl text-gold mb-4 drop-shadow-2xl inline-block">GurMania</span>
