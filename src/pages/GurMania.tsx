@@ -5,7 +5,7 @@ import { CreditCard, Crown, Star, Gift, ChevronRight, Mail, MapPin, Clock, Wine,
 import ProductCard from "@/components/ProductCard";
 import GurManiaLayout from "@/components/GurManiaLayout";
 import { Lang, gmContent } from "@/lib/i18n";
-import { mockProducts, mockEvents, mockPromos, formatPriceUnit, getPerKgPrice } from "@/lib/mock-data";
+import { mockProducts, mockEvents, mockPromos } from "@/lib/mock-data";
 import heroWine1 from "@/assets/hero-wine-1.jpg";
 import heroWine2 from "@/assets/hero-wine-2.jpg";
 import heroWine3 from "@/assets/hero-wine-3.jpg";

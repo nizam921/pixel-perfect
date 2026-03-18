@@ -5,7 +5,7 @@ import { SlidersHorizontal, X, ChevronDown } from "lucide-react";
 import ProductCard from "@/components/ProductCard";
 import GurManiaLayout from "@/components/GurManiaLayout";
 import { Lang, gmContent } from "@/lib/i18n";
-import { mockProducts, mockPromos, countries, categories, wineTypes, formatPriceUnit, getPerKgPrice } from "@/lib/mock-data";
+import { mockProducts, countries, categories, wineTypes } from "@/lib/mock-data";
 
 const GurManiaCatalog = () => {
   const [lang, setLang] = useState<Lang>("EN");
