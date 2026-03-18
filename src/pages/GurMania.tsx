@@ -76,7 +76,7 @@ const GurManiaPage = () => {
                 ✦
               </span>
             ))}
-            <div className="flex flex-col items-center justify-center h-full px-5 py-20 gap-6">
+            <div className="flex flex-col items-center justify-center h-full px-5 py-20 gap-6 relative z-10">
               <div className="flex items-center gap-2">
                 <CreditCard className="w-4 h-4 text-gold" />
                 <h3 className="font-display text-[10px] tracking-[0.15em] text-gold">{t.loyalty.title}</h3>
