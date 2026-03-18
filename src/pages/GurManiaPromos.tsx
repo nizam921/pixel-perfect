@@ -37,7 +37,7 @@ const GurManiaPromos = () => {
                 to={`/gurmania/product/${promo.product.id}`}
                 className="bg-gradient-to-b from-gurmania-surface to-gurmania border border-gold/10 rounded-xl overflow-hidden relative group block hover:border-gold/20 transition-all duration-500"
               >
-                <div className="absolute top-3 left-3 bg-wine-red text-gurmania-foreground font-display text-[11px] tracking-wider px-3 py-1 rounded-full z-10 shadow-lg">
+                 <div className="absolute top-3 left-3 bg-wine-red text-gurmania-foreground font-display text-xs tracking-wider px-3 py-1 rounded-full z-10 shadow-lg">
                   -{promo.discount}%
                 </div>
                 <div className="aspect-[4/3] overflow-hidden">
