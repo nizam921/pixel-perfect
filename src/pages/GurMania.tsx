@@ -299,7 +299,7 @@ const GurManiaPage = () => {
             <h2 className="font-display text-2xl md:text-3xl tracking-[0.1em] mb-2">{t.club.title}</h2>
             <p className="font-display text-gold/70 text-lg tracking-[0.2em] mb-6">{t.club.subtitle}</p>
           </motion.div>
-          <div className="grid grid-cols-3 gap-4 max-w-xl mx-auto mb-10">
+          <div className="grid grid-cols-3 gap-4 max-w-xl mx-auto mb-6">
             {[
               { icon: Star, label: t.club.p1 },
               { icon: Gift, label: t.club.p2 },
