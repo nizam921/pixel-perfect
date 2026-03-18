@@ -128,7 +128,7 @@ const SplashScreen = () => {
           }} />
 
           <motion.div
-            className="relative z-10 h-full flex flex-col items-center justify-center"
+            className="relative z-10 h-full flex flex-col items-center justify-center pb-[15%]"
             style={{ paddingRight: '40%' }}
             animate={selected === "gur" ? { paddingRight: '0%' } : {}}
             transition={{ duration: 0.7 }}
