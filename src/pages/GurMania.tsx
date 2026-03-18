@@ -203,9 +203,9 @@ const GurManiaPage = () => {
       </section>
 
       {/* ═══════ Popular Products ═══════ */}
-      <section className="py-14 md:py-20 bg-gurmania-surface">
+      <section className="py-10 md:py-14 bg-gurmania-surface">
         <div className="container mx-auto px-4 md:px-8">
-          <div className="flex items-center justify-between mb-8">
+          <div className="flex items-center justify-between mb-5">
             <h2 className="font-display text-xl md:text-2xl tracking-[0.1em]">
               {lang === "RU" ? "Популярное" : lang === "AZ" ? "Populyar" : "Popular"}
             </h2>
