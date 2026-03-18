@@ -113,7 +113,6 @@ const GurManiaPage = () => {
                   </div>
                 </div>
               </div>
-              </div>
 
               {/* Right — Branding + slide text + CTAs */}
               <div className="order-1 lg:order-2 text-center lg:text-right">
