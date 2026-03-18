@@ -34,8 +34,10 @@ const GurManiaCatalog = () => {
     wine: lang === "RU" ? "Вина" : lang === "AZ" ? "Şərablar" : "Wines",
     sparkling: lang === "RU" ? "Игристые" : lang === "AZ" ? "Köpüklü" : "Sparkling",
     cheese: lang === "RU" ? "Сыры" : lang === "AZ" ? "Pendirlər" : "Cheeses",
-    meat: lang === "RU" ? "Мясо" : lang === "AZ" ? "Ət" : "Meat",
+    meat: lang === "RU" ? "Мясо & Колбасы" : lang === "AZ" ? "Ət & Kolbasalar" : "Meat & Sausages",
     delicacy: lang === "RU" ? "Деликатесы" : lang === "AZ" ? "Delikatesslər" : "Delicacies",
+    accessory: lang === "RU" ? "Аксессуары" : lang === "AZ" ? "Aksesuarlar" : "Accessories",
+    set: lang === "RU" ? "Подарочные сеты" : lang === "AZ" ? "Hədiyyə setləri" : "Gift Sets",
   };
 
   const activeFilters = [selectedCategory !== "all", selectedCountry !== "all", selectedType !== "all"].filter(Boolean).length;
