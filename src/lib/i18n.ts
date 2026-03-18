@@ -50,7 +50,7 @@ export const gmContent: Record<Lang, {
     events: { title: "Ближайшие мероприятия", btn: "Все мероприятия" },
     about: { title: "О нас", text: "GurMania — премиальный винный бутик в Баку с 1980 года. Место премиальных продуктов и алкоголя. Вина, сыры и деликатесы из Италии, Франции, Испании, Грузии и более 20 стран мира.", since: "С 1980 года", products: "2000+ товаров", countries: "20+ стран", clients: "50K+ клиентов" },
     subscribe: { title: "Будьте в курсе новинок", subtitle: "Эксклюзивные предложения и мероприятия — первыми узнаете вы", placeholder: "Ваш email", btn: "Подписаться", success: "Вы успешно подписались!" },
-    footer: { rights: "Все права защищены", address: "Баку, Азербайджан" },
+    footer: { rights: "Все права защищены", address: "Низами 98, Баку, Азербайджан" },
     catalog: { title: "Наш каталог", filterTitle: "Фильтры", category: "Категория", country: "Страна", priceRange: "Ценовой диапазон", sort: "Сортировка", all: "Все", byPrice: "По цене", byPopularity: "По популярности", byNew: "По новизне" },
     product: { addToCart: "В корзину", clubPrice: "Цена для членов клуба", related: "Вам также понравится", description: "Описание", characteristics: "Характеристики", region: "Регион", year: "Год", grape: "Сорт винограда", volume: "Объём" },
   },
