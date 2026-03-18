@@ -69,7 +69,7 @@ export const gmContent: Record<Lang, {
     events: { title: "Upcoming Events", btn: "All Events" },
     about: { title: "About Us", text: "GurMania is Baku's premium wine boutique since 1980. A place of premium products and alcohol. Wines, cheeses and delicacies from Italy, France, Spain, Georgia and 20+ countries worldwide.", since: "Since 1980", products: "2000+ products", countries: "20+ countries", clients: "50K+ clients" },
     subscribe: { title: "Stay Updated", subtitle: "Be the first to know about exclusive offers and events", placeholder: "Your email", btn: "Subscribe", success: "Successfully subscribed!" },
-    footer: { rights: "All rights reserved", address: "Baku, Azerbaijan" },
+    footer: { rights: "All rights reserved", address: "Nizami 98, Baku, Azerbaijan" },
     catalog: { title: "Our Catalog", filterTitle: "Filters", category: "Category", country: "Country", priceRange: "Price Range", sort: "Sort by", all: "All", byPrice: "By price", byPopularity: "By popularity", byNew: "By newest" },
     product: { addToCart: "Add to Cart", clubPrice: "Club price", related: "You may also like", description: "Description", characteristics: "Characteristics", region: "Region", year: "Year", grape: "Grape variety", volume: "Volume" },
   },

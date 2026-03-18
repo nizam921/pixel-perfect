@@ -66,7 +66,7 @@ const GurManiaContacts = () => {
                 </div>
                 <div>
                   <p className="font-display text-xs tracking-[0.15em] text-gold/70 mb-1">Email</p>
-                  <p className="font-body text-gold/70 text-sm">info@gurmania.az</p>
+                  <p className="font-body text-gold/70 text-sm">marketing@gurmania.az</p>
                 </div>
               </div>
 
