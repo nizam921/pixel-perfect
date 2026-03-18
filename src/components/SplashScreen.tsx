@@ -1,4 +1,4 @@
-import { useState, useCallback } from "react";
+import { useState, useCallback, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import gurmaniaLogo from "@/assets/gurmania-logo-dark.png";
@@ -47,6 +47,23 @@ const SplashScreen = () => {
   const t = content[lang];
 
   const isTransitioning = selected !== "none";
+
+  // Calculate diagonal angle dynamically
+  const [diagAngle, setDiagAngle] = useState(-15);
+  useEffect(() => {
+    const updateAngle = () => {
+      const w = window.innerWidth;
+      const h = window.innerHeight;
+      // Diagonal goes from (diagLeft% * w, 0) to (diagRight% * w, h)
+      const dx = (42 - 58) / 100 * w; // default positions
+      const dy = h;
+      const angle = Math.atan2(dy, dx) * (180 / Math.PI) - 90;
+      setDiagAngle(angle);
+    };
+    updateAngle();
+    window.addEventListener('resize', updateAngle);
+    return () => window.removeEventListener('resize', updateAngle);
+  }, []);
 
   // Diagonal positions
   const getDiag = () => {
@@ -104,7 +121,7 @@ const SplashScreen = () => {
               left: `${(diagLeft + diagRight) / 2}%`,
               x: '-50%',
               y: '-50%',
-              rotate: -15,
+              rotate: diagAngle,
             }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.6, ease: "easeInOut" }}
@@ -136,7 +153,7 @@ const SplashScreen = () => {
 
           <motion.div
             className="relative z-10 h-full flex flex-col items-center justify-center"
-            style={{ paddingRight: '35%' }}
+            style={{ paddingRight: '25%' }}
             animate={selected === "gur" ? { paddingRight: '0%' } : {}}
             transition={{ duration: 0.7 }}
           >
@@ -191,7 +208,7 @@ const SplashScreen = () => {
 
           <motion.div
             className="relative z-10 h-full flex flex-col items-center justify-center"
-            style={{ paddingLeft: '35%' }}
+            style={{ paddingLeft: '25%' }}
             animate={selected === "inn" ? { paddingLeft: '0%' } : {}}
             transition={{ duration: 0.7 }}
           >
