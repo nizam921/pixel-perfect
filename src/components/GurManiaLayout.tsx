@@ -20,6 +20,7 @@ const NewsletterForm = ({ lang }: { lang: string }) => {
   );
 };
 
+interface Props {
   lang: Lang;
   setLang: (l: Lang) => void;
   children: React.ReactNode;
