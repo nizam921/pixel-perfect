@@ -27,7 +27,7 @@ const content: Record<Lang, { choose: [string, string, string]; gurSub: string; 
     innBtn: "Узнать больше",
   },
   EN: {
-    choose: "CHOOSE YOUR EXPERIENCE",
+    choose: ["Choose", "Your", "Experience"],
     gurSub: "Premium Wines · Cheeses · Delicacies",
     gurTag: "Wine Boutique since 1980",
     gurBtn: "Explore",
