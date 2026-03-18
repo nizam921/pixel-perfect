@@ -102,14 +102,14 @@ const SplashScreen = () => {
               opacity: 1,
               top: '50%',
               left: `${(diagLeft + diagRight) / 2}%`,
-              rotate: `${Math.atan2(-(diagLeft - diagRight), 100) * (180 / Math.PI) - 90}deg`,
               x: '-50%',
               y: '-50%',
+              rotate: -15,
             }}
-            exit={{ opacity: 0, scale: 0.9 }}
+            exit={{ opacity: 0 }}
             transition={{ duration: 0.6, ease: "easeInOut" }}
           >
-            <p className="font-display text-gold text-xs tracking-[0.35em] uppercase leading-[2.2] text-center whitespace-nowrap">
+            <p className="font-display text-gold text-[11px] tracking-[0.4em] uppercase leading-[2.5] text-center whitespace-nowrap drop-shadow-[0_2px_12px_rgba(201,168,76,0.5)]">
               {t.choose[0]}<br/>{t.choose[1]}<br/>{t.choose[2]}
             </p>
           </motion.div>
