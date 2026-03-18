@@ -318,7 +318,7 @@ const GurManiaPage = () => {
                   <div className="absolute top-2 left-2 bg-wine-red text-gurmania-foreground font-display text-[11px] tracking-wider px-2.5 py-0.5 rounded-full z-10">
                     SALE
                   </div>
-                  <div className="absolute top-2 right-2 bg-gurmania/70 backdrop-blur-sm text-gold font-display text-[11px] tracking-wider px-2.5 py-0.5 rounded-full z-10">
+                  <div className="absolute top-2 right-2 bg-wine-red text-gurmania-foreground font-display text-[11px] tracking-wider px-2.5 py-0.5 rounded-full z-10">
                     -{promo.discount}%
                   </div>
                   <div className="aspect-square overflow-hidden">

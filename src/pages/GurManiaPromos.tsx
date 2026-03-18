@@ -41,7 +41,7 @@ const GurManiaPromos = () => {
                    <span className="bg-wine-red text-gurmania-foreground font-display text-xs tracking-wider px-3 py-1 rounded-full shadow-lg">
                      SALE
                    </span>
-                   <span className="bg-gurmania/70 backdrop-blur-sm text-gold font-display text-xs tracking-wider px-3 py-1 rounded-full shadow-lg">
+                   <span className="bg-wine-red text-gurmania-foreground font-display text-xs tracking-wider px-3 py-1 rounded-full shadow-lg">
                      -{promo.discount}%
                    </span>
                  </div>
