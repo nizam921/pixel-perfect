@@ -95,13 +95,14 @@ const SplashScreen = () => {
       <AnimatePresence>
         {!isTransitioning && (
           <motion.div
-            className="hidden md:block absolute top-1/2 left-1/2 z-40 -translate-x-1/2 -translate-y-1/2 text-center pointer-events-none"
+            className="hidden md:flex absolute items-center justify-center pointer-events-none"
+            style={{ bottom: '12%', left: '50%', transform: 'translateX(-50%)', zIndex: 60 }}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.9 }}
             transition={{ delay: 0.8, duration: 0.8 }}
           >
-            <p className="font-display text-gold text-lg tracking-[0.4em] uppercase drop-shadow-[0_2px_8px_rgba(201,168,76,0.4)] leading-relaxed">
+            <p className="font-display text-gold text-xs tracking-[0.35em] uppercase leading-[2.2] text-center mix-blend-difference">
               {t.choose[0]}<br/>{t.choose[1]}<br/>{t.choose[2]}
             </p>
           </motion.div>
@@ -127,8 +128,8 @@ const SplashScreen = () => {
           }} />
 
           <motion.div
-            className="relative z-10 h-full flex flex-col items-center justify-center"
-            style={{ paddingRight: '30%' }}
+            className="relative z-10 h-full flex flex-col items-center justify-center pb-[15%]"
+            style={{ paddingRight: '40%' }}
             animate={selected === "gur" ? { paddingRight: '0%' } : {}}
             transition={{ duration: 0.7 }}
           >
@@ -182,8 +183,8 @@ const SplashScreen = () => {
           <div className="absolute inset-0 bg-innvino" />
 
           <motion.div
-            className="relative z-10 h-full flex flex-col items-center justify-center"
-            style={{ paddingLeft: '30%' }}
+            className="relative z-10 h-full flex flex-col items-center justify-center pb-[15%]"
+            style={{ paddingLeft: '40%' }}
             animate={selected === "inn" ? { paddingLeft: '0%' } : {}}
             transition={{ duration: 0.7 }}
           >
