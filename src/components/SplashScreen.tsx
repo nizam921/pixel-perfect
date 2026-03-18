@@ -18,7 +18,7 @@ const content: Record<Lang, { choose: [string, string, string]; gurSub: string; 
     innBtn: "Daha çox",
   },
   RU: {
-    choose: "ВЫБЕРИТЕ СВОЙ ПУТЬ",
+    choose: ["Выберите", "Свой", "Путь"],
     gurSub: "Премиум Вина · Сыры · Деликатесы",
     gurTag: "Винный бутик с 1980 года",
     gurBtn: "Войти",
