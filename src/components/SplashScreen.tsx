@@ -62,14 +62,14 @@ const SplashScreen = () => {
         ))}
       </div>
 
-      {/* Center "choose" text */}
+      {/* Center "choose" text — desktop only */}
       <motion.div
-        className="absolute top-1/2 left-1/2 z-40 -translate-x-1/2 -translate-y-1/2 text-center pointer-events-none"
+        className="hidden md:block absolute top-1/2 left-1/2 z-40 -translate-x-1/2 -translate-y-1/2 text-center pointer-events-none"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.8, duration: 0.8 }}
       >
-        <p className="font-display text-gold text-sm md:text-base tracking-[0.4em] drop-shadow-[0_2px_8px_rgba(201,168,76,0.4)]">
+        <p className="font-display text-gold text-base tracking-[0.4em] drop-shadow-[0_2px_8px_rgba(201,168,76,0.4)]">
           {t.choose}
         </p>
       </motion.div>
