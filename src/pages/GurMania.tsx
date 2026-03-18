@@ -57,57 +57,54 @@ const GurManiaPage = () => {
         <div className="absolute inset-0 bg-gradient-to-t from-gurmania via-gurmania/60 to-gurmania/30" />
         <div className="absolute inset-0 bg-gradient-to-r from-gurmania/40 via-transparent to-gurmania/40" />
 
-        {/* Loyalty ribbon — full-width strip at top, starts from header */}
-        <div className="absolute top-0 left-0 right-0 z-20">
-          <div className="bg-gradient-to-r from-gurmania/80 via-gurmania/60 to-gurmania/80 backdrop-blur-xl border-b border-gold/10">
-            <div className="container mx-auto px-4 md:px-8">
-              <div className="flex items-center justify-between gap-3 py-2 md:py-2.5">
-                {/* Left: loyalty label */}
-                <div className="flex items-center gap-2 flex-shrink-0">
-                  <CreditCard className="w-3.5 h-3.5 text-gold" />
-                  <span className="font-display text-[10px] md:text-xs tracking-[0.15em] text-gold hidden sm:inline">{t.loyalty.title}</span>
-                </div>
+        {/* Loyalty ribbon — vertical strip on left side */}
+        <div className="absolute top-0 left-0 bottom-0 z-20 hidden lg:block w-[220px]">
+          <div className="h-full bg-gradient-to-b from-gurmania/90 via-gurmania/70 to-gurmania/90 backdrop-blur-xl border-r border-gold/10">
+            <div className="flex flex-col items-center justify-center h-full px-5 py-20 gap-6">
+              <div className="flex items-center gap-2">
+                <CreditCard className="w-4 h-4 text-gold" />
+                <h3 className="font-display text-[10px] tracking-[0.15em] text-gold">{t.loyalty.title}</h3>
+              </div>
 
-                {/* Center: input + button */}
-                <div className="flex items-center gap-2 flex-1 max-w-md">
-                  <input
-                    value={cardNumber}
-                    onChange={(e) => setCardNumber(e.target.value)}
-                    placeholder={t.loyalty.placeholder}
-                    className="flex-1 bg-gurmania/40 border border-gold/15 rounded-lg px-3 py-1.5 font-body text-[11px] text-gurmania-foreground placeholder:text-gurmania-foreground/30 focus:outline-none focus:border-gold/40 transition-colors min-w-0"
-                  />
-                  <button className="text-gurmania bg-gold font-display text-[9px] tracking-[0.2em] px-4 py-1.5 rounded-lg hover:bg-gold-glow transition-colors flex-shrink-0">
-                    {t.loyalty.btn}
-                  </button>
-                </div>
+              <div className="w-full space-y-2">
+                <input
+                  value={cardNumber}
+                  onChange={(e) => setCardNumber(e.target.value)}
+                  placeholder={t.loyalty.placeholder}
+                  className="w-full bg-gurmania/40 border border-gold/15 rounded-lg px-3 py-2 font-body text-[11px] text-gurmania-foreground placeholder:text-gurmania-foreground/30 focus:outline-none focus:border-gold/40 transition-colors"
+                />
+                <button className="w-full text-gurmania bg-gold font-display text-[9px] tracking-[0.2em] px-4 py-2 rounded-lg hover:bg-gold-glow transition-colors">
+                  {t.loyalty.btn}
+                </button>
+              </div>
 
-                {/* Right: benefits + club */}
-                <div className="hidden lg:flex items-center gap-5 flex-shrink-0">
-                  <div className="flex items-center gap-4">
-                    {[
-                      { icon: Star, text: lang === "RU" ? "Баллы" : lang === "AZ" ? "Ballar" : "Points" },
-                      { icon: Gift, text: lang === "RU" ? "Скидки" : lang === "AZ" ? "Endirimlər" : "Discounts" },
-                      { icon: Crown, text: lang === "RU" ? "VIP доступ" : lang === "AZ" ? "VIP giriş" : "VIP Access" },
-                    ].map((item, i) => (
-                      <div key={i} className="flex items-center gap-1.5">
-                        <item.icon className="w-3 h-3 text-gold/50" />
-                        <span className="font-body text-gurmania-foreground/50 text-[10px]">{item.text}</span>
-                      </div>
-                    ))}
+              <div className="w-10 h-px bg-gradient-to-r from-transparent via-gold/30 to-transparent" />
+
+              <div className="space-y-3 w-full">
+                {[
+                  { icon: Star, text: lang === "RU" ? "Баллы за покупки" : lang === "AZ" ? "Alış balları" : "Earn Points" },
+                  { icon: Gift, text: lang === "RU" ? "Скидки и подарки" : lang === "AZ" ? "Endirimlər" : "Discounts & Gifts" },
+                  { icon: Crown, text: lang === "RU" ? "VIP доступ" : lang === "AZ" ? "VIP giriş" : "VIP Access" },
+                ].map((item, i) => (
+                  <div key={i} className="flex items-center gap-2">
+                    <item.icon className="w-3 h-3 text-gold/50 flex-shrink-0" />
+                    <span className="font-body text-gurmania-foreground/50 text-[10px]">{item.text}</span>
                   </div>
-                  <div className="h-4 w-px bg-gold/15" />
-                  <div className="flex items-center gap-2">
-                    <span className="font-display text-[10px] tracking-wider text-gold/70">
-                      {lang === "RU" ? "Клуб Гурманов" : lang === "AZ" ? "Gurmanlar Klubu" : "Gourmet Club"}
-                    </span>
-                    <span className="font-body text-gurmania-foreground/40 text-[10px]">
-                      <span className="text-gold font-display">0.99 ₼</span>{lang === "RU" ? "/мес" : lang === "AZ" ? "/ay" : "/mo"}
-                    </span>
-                    <button className="bg-gold text-gurmania font-display text-[8px] tracking-[0.2em] px-3 py-1 rounded-md hover:bg-gold-glow transition-colors">
-                      {t.club.btn}
-                    </button>
-                  </div>
-                </div>
+                ))}
+              </div>
+
+              <div className="w-10 h-px bg-gradient-to-r from-transparent via-gold/30 to-transparent" />
+
+              <div className="w-full bg-gold/10 border border-gold/20 rounded-lg p-3 text-center">
+                <p className="font-display text-[10px] tracking-wider text-gold mb-1">
+                  {lang === "RU" ? "Клуб Гурманов" : lang === "AZ" ? "Gurmanlar Klubu" : "Gourmet Club"}
+                </p>
+                <p className="font-body text-gurmania-foreground/40 text-[10px] mb-2">
+                  <span className="text-gold font-display">0.99 ₼</span>{lang === "RU" ? "/мес" : lang === "AZ" ? "/ay" : "/mo"}
+                </p>
+                <button className="w-full bg-gold text-gurmania font-display text-[8px] tracking-[0.2em] px-3 py-1.5 rounded-md hover:bg-gold-glow transition-colors">
+                  {t.club.btn}
+                </button>
               </div>
             </div>
           </div>
