@@ -56,10 +56,24 @@ export interface Product {
   type?: "red" | "white" | "rose" | "orange";
   grape?: string;
   volume?: string;
+  priceUnit?: "per100g" | "perKg" | "perPiece";
   description: string;
   image: string;
   rating: number;
 }
+
+// Helper: categories where price is per 100g by default
+export const isWeightBasedCategory = (cat: string) => ["cheese", "meat"].includes(cat);
+export const formatPriceUnit = (product: Product, lang: string) => {
+  if (product.priceUnit === "perKg" || product.volume === "1kg") return lang === "RU" ? "/ кг" : lang === "AZ" ? "/ kq" : "/ kg";
+  if (isWeightBasedCategory(product.category) || product.priceUnit === "per100g") return lang === "RU" ? "/ 100г" : lang === "AZ" ? "/ 100q" : "/ 100g";
+  return "";
+};
+export const getPerKgPrice = (product: Product) => {
+  if (product.priceUnit === "perKg" || product.volume === "1kg") return null;
+  if (isWeightBasedCategory(product.category) || product.priceUnit === "per100g") return (product.price * 10).toFixed(2);
+  return null;
+};
 
 export interface Event {
   id: string;
