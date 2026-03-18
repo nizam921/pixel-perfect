@@ -54,9 +54,9 @@ const GurManiaLayout = ({ lang, setLang, children }: Props) => {
               <Link
                 key={item.path}
                 to={item.path}
-                className={`relative font-body text-sm tracking-[0.15em] transition-colors duration-300 hover:text-gold ${
+                className={`relative font-body text-sm tracking-[0.15em] transition-colors duration-300 hover:text-white ${
                   location.pathname === item.path
-                    ? "text-gold after:absolute after:-bottom-1 after:left-0 after:right-0 after:h-px after:bg-gold"
+                    ? "text-white after:absolute after:-bottom-1 after:left-0 after:right-0 after:h-px after:bg-white"
                     : "text-gurmania-foreground/60"
                 }`}
               >
