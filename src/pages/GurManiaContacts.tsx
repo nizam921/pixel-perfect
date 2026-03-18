@@ -56,7 +56,7 @@ const GurManiaContacts = () => {
                   <p className="font-display text-xs tracking-[0.15em] text-gold/70 mb-1">
                     {lang === "RU" ? "Телефон" : lang === "AZ" ? "Telefon" : "Phone"}
                   </p>
-                  <p className="font-body text-gurmania-foreground/70 text-sm">+994 12 000 00 00</p>
+                  <p className="font-body text-gurmania-foreground/70 text-sm">+994 50 262 05 88</p>
                 </div>
               </div>
 
