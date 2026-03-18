@@ -325,9 +325,9 @@ const GurManiaPage = () => {
       </section>
 
       {/* ═══════ Events ═══════ */}
-      <section className="py-14 md:py-20">
+      <section className="py-10 md:py-14">
         <div className="container mx-auto px-4 md:px-8">
-          <h2 className="font-display text-xl md:text-2xl tracking-[0.1em] mb-8">{t.events.title}</h2>
+          <h2 className="font-display text-xl md:text-2xl tracking-[0.1em] mb-5">{t.events.title}</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {mockEvents.map((event, i) => (
               <motion.div
