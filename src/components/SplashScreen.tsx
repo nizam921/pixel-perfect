@@ -140,7 +140,7 @@ const SplashScreen = () => {
         >
           <div className="absolute inset-0 bg-innvino" />
 
-          <div className="relative z-10 h-full flex flex-col items-center justify-center pl-[15%]">
+          <div className="relative z-10 h-full flex flex-col items-center justify-center" style={{ paddingLeft: '30%' }}>
             <motion.img
               src={innvinoLogo}
               alt="InnVino"
