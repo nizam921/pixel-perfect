@@ -9,7 +9,7 @@ type Lang = (typeof languages)[number];
 
 const content: Record<Lang, { choose: [string, string, string]; gurSub: string; gurTag: string; gurBtn: string; innSub: string; innTag: string; innBtn: string }> = {
   AZ: {
-    choose: "YOLUNUZU SEÇİN",
+    choose: ["Yolunuzu", "Seçin", ""],
     gurSub: "Premium Şərablar · Pendirlər · Delikatesslər",
     gurTag: "1980-ci ildən şərab butiki",
     gurBtn: "Kəşf et",
