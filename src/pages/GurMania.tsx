@@ -268,10 +268,10 @@ const GurManiaPage = () => {
                     <img src={promo.product.image} alt={promo.product.name} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
                   </div>
                   <div className="p-4">
-                    <h4 className="font-display text-sm tracking-wide mb-2 group-hover:text-gold transition-colors">{promo.product.name}</h4>
+                    <h4 className="font-display text-base tracking-wide mb-2 group-hover:text-gold transition-colors">{promo.product.name}</h4>
                     <div className="flex items-center gap-2">
-                      <span className="font-display text-gold text-lg">{promo.product.price} ₼</span>
-                      {promo.product.oldPrice && <span className="font-body text-gurmania-text-secondary/40 line-through text-xs">{promo.product.oldPrice} ₼</span>}
+                      <span className="font-display text-gold text-xl">{promo.product.price} ₼</span>
+                      {promo.product.oldPrice && <span className="font-body text-gurmania-text-secondary/40 line-through text-sm">{promo.product.oldPrice} ₼</span>}
                     </div>
                   </div>
                 </Link>

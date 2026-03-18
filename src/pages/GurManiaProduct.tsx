@@ -109,8 +109,8 @@ const GurManiaProduct = () => {
                         <img src={p.image} alt={p.name} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
                       </div>
                       <div className="p-3">
-                        <h4 className="font-display text-[11px] tracking-wide mb-1 group-hover:text-gold transition-colors line-clamp-1">{p.name}</h4>
-                        <span className="font-display text-gold text-sm">{p.price} ₼</span>
+                       <h4 className="font-display text-sm tracking-wide mb-1 group-hover:text-gold transition-colors line-clamp-1">{p.name}</h4>
+                        <span className="font-display text-gold text-base">{p.price} ₼</span>
                       </div>
                     </Link>
                   </motion.div>
