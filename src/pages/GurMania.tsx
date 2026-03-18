@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { CreditCard, Crown, Star, Gift, ChevronRight, Mail, MapPin, Clock, Wine, Grape } from "lucide-react";
