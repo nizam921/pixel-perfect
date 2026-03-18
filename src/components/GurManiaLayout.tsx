@@ -243,6 +243,9 @@ const GurManiaLayout = ({ lang, setLang, children }: Props) => {
                 {lang === "RU" ? "Будьте в курсе" : lang === "AZ" ? "Xəbərdar olun" : "Stay Updated"}
               </h4>
               <NewsletterForm lang={lang} />
+              <p className="font-body text-gurmania-text-secondary/40 text-[10px] mt-2 leading-relaxed">
+                {lang === "RU" ? "Подписываясь, вы соглашаетесь на получение маркетинговых писем и акций от GurMania." : lang === "AZ" ? "Abunə olaraq, GurMania-dan marketinq məktubları və aksiyalar almağa razılıq verirsiniz." : "By subscribing, you agree to receive marketing emails and promotions from GurMania."}
+              </p>
             </div>
           </div>
 
