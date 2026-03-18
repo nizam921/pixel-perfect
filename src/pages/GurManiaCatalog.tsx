@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { SlidersHorizontal, X, Star, ChevronDown } from "lucide-react";
 import GurManiaLayout from "@/components/GurManiaLayout";
 import { Lang, gmContent } from "@/lib/i18n";
-import { mockProducts, countries, categories, wineTypes, formatPriceUnit, getPerKgPrice } from "@/lib/mock-data";
+import { mockProducts, mockPromos, countries, categories, wineTypes, formatPriceUnit, getPerKgPrice } from "@/lib/mock-data";
 
 const GurManiaCatalog = () => {
   const [lang, setLang] = useState<Lang>("EN");
@@ -214,7 +214,10 @@ const GurManiaCatalog = () => {
                   >
                     <div className="aspect-square overflow-hidden relative">
                       {product.oldPrice && (
-                        <span className="absolute top-2 right-2 bg-wine-red text-gurmania-foreground font-display text-[11px] tracking-wider px-2.5 py-0.5 rounded-full z-10">SALE</span>
+                        <>
+                          <span className="absolute top-2 left-2 bg-wine-red text-gurmania-foreground font-display text-[11px] tracking-wider px-2.5 py-0.5 rounded-full z-10">SALE</span>
+                          {(() => { const promo = mockPromos.find(p => p.productId === product.id); return promo ? <span className="absolute top-2 right-2 bg-wine-red text-gurmania-foreground font-display text-[11px] tracking-wider px-2.5 py-0.5 rounded-full z-10">-{promo.discount}%</span> : <span className="absolute top-2 right-2 bg-wine-red text-gurmania-foreground font-display text-[11px] tracking-wider px-2.5 py-0.5 rounded-full z-10">-{Math.round((1 - product.price / product.oldPrice!) * 100)}%</span>; })()}
+                        </>
                       )}
                       <img src={product.image} alt={product.name} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
                     </div>
