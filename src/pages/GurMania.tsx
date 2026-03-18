@@ -411,40 +411,6 @@ const GurManiaPage = () => {
         </div>
       </section>
 
-      {/* ═══════ Subscribe ═══════ */}
-      <section className="py-10 md:py-14 bg-gurmania-surface">
-        <div className="container mx-auto px-4 md:px-8">
-          <motion.div
-            className="max-w-lg mx-auto text-center"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
-            <Mail className="w-8 h-8 text-gold/60 mx-auto mb-4" />
-            <h2 className="font-display text-xl md:text-2xl tracking-[0.1em] mb-2">{t.subscribe.title}</h2>
-            <p className="font-body text-gurmania-text-secondary/60 text-sm mb-6">{t.subscribe.subtitle}</p>
-            {subscribed ? (
-              <p className="font-body text-gold text-sm">{t.subscribe.success}</p>
-            ) : (
-              <div className="flex gap-2">
-                <input
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  placeholder={t.subscribe.placeholder}
-                  type="email"
-                  className="flex-1 bg-gurmania/80 border border-gold/15 rounded-lg px-4 py-3 font-body text-sm text-gurmania-foreground placeholder:text-gurmania-foreground/25 focus:border-gold/40 focus:outline-none transition-all min-w-0"
-                />
-                <button
-                  onClick={() => { if (email) setSubscribed(true); }}
-                  className="bg-gold text-gurmania font-display text-[10px] tracking-[0.2em] px-6 py-3 rounded-lg hover:bg-gold-glow transition-colors flex-shrink-0"
-                >
-                  {t.subscribe.btn}
-                </button>
-              </div>
-            )}
-          </motion.div>
-        </div>
-      </section>
     </GurManiaLayout>
   );
 };
