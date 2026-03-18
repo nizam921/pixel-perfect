@@ -1,7 +1,7 @@
 import { useState, useMemo } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { SlidersHorizontal, X, Star, ChevronRight } from "lucide-react";
+import { SlidersHorizontal, X, Star, ChevronDown } from "lucide-react";
 import GurManiaLayout from "@/components/GurManiaLayout";
 import { Lang, gmContent } from "@/lib/i18n";
 import { mockProducts, countries, categories, wineTypes } from "@/lib/mock-data";
@@ -13,7 +13,7 @@ const GurManiaCatalog = () => {
   const [selectedCountry, setSelectedCountry] = useState<string>("all");
   const [selectedType, setSelectedType] = useState<string>("all");
   const [sortBy, setSortBy] = useState<string>("popularity");
-  const [priceRange, setPriceRange] = useState<[number, number]>([0, 200]);
+  const [priceRange] = useState<[number, number]>([0, 200]);
   const t = gmContent[lang];
 
   const filtered = useMemo(() => {
@@ -38,161 +38,159 @@ const GurManiaCatalog = () => {
     delicacy: lang === "RU" ? "Деликатесы" : lang === "AZ" ? "Delikatesslər" : "Delicacies",
   };
 
-  const activeFiltersCount = [
-    selectedCategory !== "all",
-    selectedCountry !== "all",
-    selectedType !== "all",
-  ].filter(Boolean).length;
+  const activeFilters = [selectedCategory !== "all", selectedCountry !== "all", selectedType !== "all"].filter(Boolean).length;
 
-  const FilterPanel = () => (
-    <div className="space-y-8">
-      {/* Category */}
-      <div>
-        <h4 className="font-display text-xs tracking-[0.2em] text-gold/80 mb-4 uppercase">
-          {t.catalog.category}
-        </h4>
-        <div className="flex flex-col gap-1">
-          {["all", ...categories].map((cat) => (
-            <button
-              key={cat}
-              onClick={() => setSelectedCategory(cat)}
-              className={`text-left font-body text-sm tracking-wide py-2 px-3 rounded-lg transition-all duration-300 ${
-                selectedCategory === cat
-                  ? "text-gold bg-gold/10"
-                  : "text-gurmania-foreground/45 hover:text-gurmania-foreground/80 hover:bg-gurmania-surface-light/50"
-              }`}
-            >
-              {categoryLabels[cat] || cat}
-            </button>
-          ))}
-        </div>
-      </div>
-
-      {/* Wine type */}
-      {(selectedCategory === "wine" || selectedCategory === "all") && (
-        <div>
-          <h4 className="font-display text-xs tracking-[0.2em] text-gold/80 mb-4 uppercase">
-            {lang === "RU" ? "Тип вина" : lang === "AZ" ? "Şərab növü" : "Wine Type"}
-          </h4>
-          <div className="flex flex-col gap-1">
-            {["all", ...wineTypes].map((wt) => (
-              <button
-                key={wt}
-                onClick={() => setSelectedType(wt)}
-                className={`text-left font-body text-sm tracking-wide py-2 px-3 rounded-lg transition-all duration-300 capitalize ${
-                  selectedType === wt
-                    ? "text-gold bg-gold/10"
-                    : "text-gurmania-foreground/45 hover:text-gurmania-foreground/80 hover:bg-gurmania-surface-light/50"
-                }`}
-              >
-                {wt === "all" ? t.catalog.all : wt}
-              </button>
-            ))}
-          </div>
-        </div>
-      )}
-
-      {/* Country */}
-      <div>
-        <h4 className="font-display text-xs tracking-[0.2em] text-gold/80 mb-4 uppercase">
-          {t.catalog.country}
-        </h4>
-        <div className="flex flex-col gap-1">
-          <button
-            onClick={() => setSelectedCountry("all")}
-            className={`text-left font-body text-sm py-2 px-3 rounded-lg transition-all duration-300 ${
-              selectedCountry === "all"
-                ? "text-gold bg-gold/10"
-                : "text-gurmania-foreground/45 hover:text-gurmania-foreground/80 hover:bg-gurmania-surface-light/50"
-            }`}
-          >
-            {t.catalog.all}
-          </button>
-          {countries.map((c) => (
-            <button
-              key={c}
-              onClick={() => setSelectedCountry(c)}
-              className={`text-left font-body text-sm py-2 px-3 rounded-lg transition-all duration-300 ${
-                selectedCountry === c
-                  ? "text-gold bg-gold/10"
-                  : "text-gurmania-foreground/45 hover:text-gurmania-foreground/80 hover:bg-gurmania-surface-light/50"
-              }`}
-            >
-              {c}
-            </button>
-          ))}
-        </div>
-      </div>
-
-      {/* Sort */}
-      <div>
-        <h4 className="font-display text-xs tracking-[0.2em] text-gold/80 mb-4 uppercase">
-          {t.catalog.sort}
-        </h4>
-        <select
-          value={sortBy}
-          onChange={(e) => setSortBy(e.target.value)}
-          className="w-full bg-gurmania/80 border border-gold/15 rounded-lg px-4 py-2.5 font-body text-sm text-gurmania-foreground focus:border-gold/40 focus:ring-1 focus:ring-gold/20 focus:outline-none transition-all"
-        >
-          <option value="popularity">{t.catalog.byPopularity}</option>
-          <option value="price-asc">{t.catalog.byPrice} ↑</option>
-          <option value="price-desc">{t.catalog.byPrice} ↓</option>
-          <option value="newest">{t.catalog.byNew}</option>
-        </select>
-      </div>
-    </div>
-  );
+  const clearFilters = () => { setSelectedCategory("all"); setSelectedCountry("all"); setSelectedType("all"); };
 
   return (
     <GurManiaLayout lang={lang} setLang={setLang}>
-      {/* Banner */}
-      <section className="pt-24 md:pt-28 pb-10 md:pb-14 bg-gurmania-surface relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-gurmania to-transparent opacity-50" />
-        <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold/15 to-transparent" />
-        <div className="container mx-auto px-4 md:px-8 relative z-10">
-          <h1 className="font-display text-3xl md:text-4xl lg:text-5xl tracking-[0.1em] text-center">
-            {t.catalog.title}
-          </h1>
-          <div className="w-12 h-px bg-gradient-to-r from-transparent via-gold to-transparent mx-auto mt-4" />
+      {/* Header */}
+      <section className="pt-20 md:pt-24 pb-4 md:pb-6 bg-gurmania-surface">
+        <div className="container mx-auto px-4 md:px-8">
+          <h1 className="font-display text-2xl md:text-3xl tracking-[0.1em] text-center">{t.catalog.title}</h1>
         </div>
       </section>
 
-      <div className="container mx-auto px-4 md:px-8 py-10 md:py-14">
-        <div className="flex gap-10">
+      {/* Category pills + Sort bar */}
+      <div className="sticky top-16 md:top-20 z-30 bg-gurmania/90 backdrop-blur-xl border-b border-gold/10">
+        <div className="container mx-auto px-4 md:px-8 py-3">
+          {/* Category pills */}
+          <div className="flex gap-2 overflow-x-auto scrollbar-hide mb-2">
+            {["all", ...categories].map((cat) => (
+              <button
+                key={cat}
+                onClick={() => setSelectedCategory(cat)}
+                className={`font-body text-xs tracking-wider whitespace-nowrap px-4 py-1.5 rounded-full border transition-all duration-300 ${
+                  selectedCategory === cat
+                    ? "bg-gold/15 border-gold/40 text-gold"
+                    : "border-gold/10 text-gurmania-foreground/40 hover:border-gold/20 hover:text-gurmania-foreground/60"
+                }`}
+              >
+                {categoryLabels[cat] || cat}
+              </button>
+            ))}
+          </div>
+
+          {/* Sort + filter row */}
+          <div className="flex items-center justify-between">
+            <p className="font-body text-gurmania-text-secondary/50 text-[11px] tracking-wide">
+              {filtered.length} {lang === "RU" ? "товаров" : lang === "AZ" ? "məhsul" : "products"}
+            </p>
+            <div className="flex items-center gap-3">
+              {activeFilters > 0 && (
+                <button onClick={clearFilters} className="font-body text-wine-red text-[10px] tracking-wider hover:text-gold transition-colors">
+                  {lang === "RU" ? "Сбросить" : lang === "AZ" ? "Sıfırla" : "Clear"}
+                </button>
+              )}
+              <div className="relative">
+                <select
+                  value={sortBy}
+                  onChange={(e) => setSortBy(e.target.value)}
+                  className="appearance-none bg-transparent border border-gold/10 rounded-lg pl-3 pr-8 py-1.5 font-body text-[11px] text-gurmania-foreground/60 focus:border-gold/30 focus:outline-none cursor-pointer"
+                >
+                  <option value="popularity">{t.catalog.byPopularity}</option>
+                  <option value="price-asc">{t.catalog.byPrice} ↑</option>
+                  <option value="price-desc">{t.catalog.byPrice} ↓</option>
+                  <option value="newest">{t.catalog.byNew}</option>
+                </select>
+                <ChevronDown className="absolute right-2 top-1/2 -translate-y-1/2 w-3 h-3 text-gurmania-foreground/30 pointer-events-none" />
+              </div>
+              <button
+                className="lg:hidden flex items-center gap-1.5 border border-gold/10 rounded-lg px-3 py-1.5 font-body text-[11px] text-gurmania-foreground/60"
+                onClick={() => setFiltersOpen(true)}
+              >
+                <SlidersHorizontal className="w-3 h-3" />
+                {t.catalog.filterTitle}
+                {activeFilters > 0 && (
+                  <span className="bg-gold text-gurmania rounded-full w-4 h-4 text-[9px] font-display flex items-center justify-center">{activeFilters}</span>
+                )}
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="container mx-auto px-4 md:px-8 py-6 md:py-8">
+        <div className="flex gap-8">
           {/* Desktop sidebar */}
-          <aside className="hidden lg:block w-60 flex-shrink-0">
-            <div className="sticky top-28">
-              <FilterPanel />
+          <aside className="hidden lg:block w-52 flex-shrink-0">
+            <div className="sticky top-40 space-y-6">
+              {/* Wine type */}
+              {(selectedCategory === "wine" || selectedCategory === "all") && (
+                <div>
+                  <h4 className="font-display text-[10px] tracking-[0.2em] text-gold/70 mb-3 uppercase">{lang === "RU" ? "Тип вина" : lang === "AZ" ? "Şərab növü" : "Wine Type"}</h4>
+                  <div className="flex flex-wrap gap-1.5">
+                    {["all", ...wineTypes].map((wt) => (
+                      <button
+                        key={wt}
+                        onClick={() => setSelectedType(wt)}
+                        className={`font-body text-[11px] tracking-wide px-3 py-1 rounded-full border transition-all capitalize ${
+                          selectedType === wt ? "bg-gold/15 border-gold/40 text-gold" : "border-gold/8 text-gurmania-foreground/40 hover:border-gold/20"
+                        }`}
+                      >
+                        {wt === "all" ? t.catalog.all : wt}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {/* Country */}
+              <div>
+                <h4 className="font-display text-[10px] tracking-[0.2em] text-gold/70 mb-3 uppercase">{t.catalog.country}</h4>
+                <div className="flex flex-col gap-0.5">
+                  <button
+                    onClick={() => setSelectedCountry("all")}
+                    className={`text-left font-body text-[11px] py-1.5 px-2 rounded transition-all ${selectedCountry === "all" ? "text-gold bg-gold/10" : "text-gurmania-foreground/40 hover:text-gurmania-foreground/60"}`}
+                  >{t.catalog.all}</button>
+                  {countries.map((c) => (
+                    <button
+                      key={c}
+                      onClick={() => setSelectedCountry(c)}
+                      className={`text-left font-body text-[11px] py-1.5 px-2 rounded transition-all ${selectedCountry === c ? "text-gold bg-gold/10" : "text-gurmania-foreground/40 hover:text-gurmania-foreground/60"}`}
+                    >{c}</button>
+                  ))}
+                </div>
+              </div>
             </div>
           </aside>
-
-          {/* Mobile filter button */}
-          <button
-            className="lg:hidden fixed bottom-6 right-6 z-40 bg-gold text-gurmania p-4 rounded-full shadow-[0_4px_20px_rgba(201,168,76,0.4)] hover:shadow-[0_8px_30px_rgba(201,168,76,0.5)] transition-shadow"
-            onClick={() => setFiltersOpen(true)}
-          >
-            <SlidersHorizontal className="w-5 h-5" />
-            {activeFiltersCount > 0 && (
-              <span className="absolute -top-1 -right-1 w-5 h-5 bg-wine-red text-gurmania-foreground rounded-full text-[10px] font-display flex items-center justify-center">
-                {activeFiltersCount}
-              </span>
-            )}
-          </button>
 
           {/* Mobile filter overlay */}
           {filtersOpen && (
             <div className="fixed inset-0 z-50 bg-gurmania/95 backdrop-blur-xl p-6 overflow-y-auto lg:hidden">
-              <div className="flex justify-between items-center mb-10">
+              <div className="flex justify-between items-center mb-8">
                 <h3 className="font-display text-lg tracking-[0.1em]">{t.catalog.filterTitle}</h3>
-                <button onClick={() => setFiltersOpen(false)} className="text-gold/80 hover:text-gold transition-colors">
-                  <X className="w-6 h-6" />
-                </button>
+                <button onClick={() => setFiltersOpen(false)} className="text-gold/80"><X className="w-6 h-6" /></button>
               </div>
-              <FilterPanel />
-              <button
-                onClick={() => setFiltersOpen(false)}
-                className="w-full mt-10 bg-gold text-gurmania font-display text-sm tracking-[0.2em] py-3.5 rounded-lg shadow-[0_4px_20px_rgba(201,168,76,0.3)]"
-              >
+              <div className="space-y-6">
+                {(selectedCategory === "wine" || selectedCategory === "all") && (
+                  <div>
+                    <h4 className="font-display text-[10px] tracking-[0.2em] text-gold/70 mb-3 uppercase">{lang === "RU" ? "Тип вина" : "Wine Type"}</h4>
+                    <div className="flex flex-wrap gap-2">
+                      {["all", ...wineTypes].map((wt) => (
+                        <button
+                          key={wt}
+                          onClick={() => setSelectedType(wt)}
+                          className={`font-body text-xs px-4 py-2 rounded-full border transition-all capitalize ${selectedType === wt ? "bg-gold/15 border-gold/40 text-gold" : "border-gold/10 text-gurmania-foreground/40"}`}
+                        >{wt === "all" ? t.catalog.all : wt}</button>
+                      ))}
+                    </div>
+                  </div>
+                )}
+                <div>
+                  <h4 className="font-display text-[10px] tracking-[0.2em] text-gold/70 mb-3 uppercase">{t.catalog.country}</h4>
+                  <div className="flex flex-wrap gap-2">
+                    {["all", ...countries].map((c) => (
+                      <button
+                        key={c}
+                        onClick={() => setSelectedCountry(c === "all" ? "all" : c)}
+                        className={`font-body text-xs px-4 py-2 rounded-full border transition-all ${(c === "all" ? selectedCountry === "all" : selectedCountry === c) ? "bg-gold/15 border-gold/40 text-gold" : "border-gold/10 text-gurmania-foreground/40"}`}
+                      >{c === "all" ? t.catalog.all : c}</button>
+                    ))}
+                  </div>
+                </div>
+              </div>
+              <button onClick={() => setFiltersOpen(false)} className="w-full mt-8 bg-gold text-gurmania font-display text-xs tracking-[0.2em] py-3 rounded-lg">
                 {lang === "RU" ? "Применить" : lang === "AZ" ? "Tətbiq et" : "Apply"}
               </button>
             </div>
@@ -200,53 +198,35 @@ const GurManiaCatalog = () => {
 
           {/* Product grid */}
           <div className="flex-1">
-            <p className="font-body text-gurmania-text-secondary/60 text-sm mb-8 tracking-wide">
-              {filtered.length} {lang === "RU" ? "товаров" : lang === "AZ" ? "məhsul" : "products"}
-            </p>
-            <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-5">
+            <div className="grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-4 gap-3 md:gap-4">
               {filtered.map((product, i) => (
                 <motion.div
                   key={product.id}
-                  initial={{ opacity: 0, y: 15 }}
+                  initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: i * 0.03, duration: 0.4 }}
+                  transition={{ delay: Math.min(i * 0.02, 0.3), duration: 0.3 }}
                 >
                   <Link
                     to={`/gurmania/product/${product.id}`}
-                    className="bg-gradient-to-b from-gurmania-surface to-gurmania border border-gold/8 rounded-xl overflow-hidden group hover:border-gold/20 transition-all duration-500 block hover:shadow-[0_8px_30px_rgba(201,168,76,0.06)]"
+                    className="bg-gradient-to-b from-gurmania-surface to-gurmania border border-gold/8 rounded-lg overflow-hidden group block hover:border-gold/20 transition-all duration-400"
                   >
-                    <div className="aspect-[3/4] bg-gurmania-surface-light flex items-center justify-center relative overflow-hidden">
+                    <div className="aspect-square overflow-hidden relative">
                       {product.oldPrice && (
-                        <span className="absolute top-3 right-3 bg-wine-red text-gurmania-foreground font-display text-[10px] tracking-wider px-2.5 py-0.5 rounded-full z-10 shadow-md">
-                          SALE
-                        </span>
+                        <span className="absolute top-2 right-2 bg-wine-red text-gurmania-foreground font-display text-[9px] tracking-wider px-2 py-0.5 rounded-full z-10">SALE</span>
                       )}
-                      <div className="absolute inset-0 bg-gradient-to-b from-transparent to-gurmania-surface/30" />
-                      <span className="font-body text-gurmania-text-secondary/40 text-xs tracking-wider">
-                        {product.volume || product.category}
-                      </span>
+                      <img src={product.image} alt={product.name} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
                     </div>
-                    <div className="p-5">
-                      <h4 className="font-display text-sm tracking-wide mb-1.5 group-hover:text-gold transition-colors duration-300 line-clamp-1">
-                        {product.name}
-                      </h4>
-                      <p className="font-body text-gurmania-text-secondary/50 text-xs mb-3">
-                        {product.region} {product.year ? `· ${product.year}` : ""}
-                      </p>
+                    <div className="p-3">
+                      <h4 className="font-display text-[11px] tracking-wide mb-1 group-hover:text-gold transition-colors line-clamp-1">{product.name}</h4>
+                      <p className="font-body text-gurmania-text-secondary/40 text-[10px] mb-2">{product.region} {product.year ? `· ${product.year}` : ""}</p>
                       <div className="flex items-center justify-between">
-                        <div className="flex items-center gap-2">
-                          <span className="font-display text-gold">{product.price} ₼</span>
-                          {product.oldPrice && (
-                            <span className="font-body text-gurmania-text-secondary/40 text-xs line-through">
-                              {product.oldPrice} ₼
-                            </span>
-                          )}
+                        <div className="flex items-center gap-1.5">
+                          <span className="font-display text-gold text-sm">{product.price} ₼</span>
+                          {product.oldPrice && <span className="font-body text-gurmania-text-secondary/30 text-[10px] line-through">{product.oldPrice} ₼</span>}
                         </div>
-                        <div className="flex items-center gap-1">
-                          <Star className="w-3 h-3 text-gold fill-gold" />
-                          <span className="font-body text-gurmania-text-secondary/60 text-xs">
-                            {product.rating}
-                          </span>
+                        <div className="flex items-center gap-0.5">
+                          <Star className="w-2.5 h-2.5 text-gold fill-gold" />
+                          <span className="font-body text-gurmania-text-secondary/50 text-[10px]">{product.rating}</span>
                         </div>
                       </div>
                     </div>
