@@ -218,13 +218,12 @@ const GurManiaLayout = ({ lang, setLang, children }: Props) => {
 
             <div>
               <h4 className="font-display text-gold/80 text-xs tracking-[0.3em] mb-5 uppercase">
-                {lang === "RU" ? "Часы работы" : lang === "AZ" ? "İş saatları" : "Hours"}
+                {lang === "RU" ? "Будьте в курсе" : lang === "AZ" ? "Xəbərdar olun" : "Stay Updated"}
               </h4>
-              <div className="space-y-2.5">
-                <p className="font-body text-gurmania-text-secondary text-sm">
-                  {lang === "RU" ? "Ежедневно: 10:00 – 22:00" : lang === "AZ" ? "Hər gün: 10:00 – 22:00" : "Daily: 10:00 – 22:00"}
-                </p>
-              </div>
+              <p className="font-body text-gurmania-text-secondary text-sm mb-3">
+                {lang === "RU" ? "Ежедневно: 10:00 – 22:00" : lang === "AZ" ? "Hər gün: 10:00 – 22:00" : "Daily: 10:00 – 22:00"}
+              </p>
+              <NewsletterForm lang={lang} />
             </div>
           </div>
 
