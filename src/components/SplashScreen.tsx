@@ -121,7 +121,7 @@ const SplashScreen = () => {
               left: `${(diagLeft + diagRight) / 2}%`,
               x: '-50%',
               y: '-50%',
-              rotate: -15,
+              rotate: diagAngle,
             }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.6, ease: "easeInOut" }}
