@@ -1,9 +1,24 @@
 import { useState, useEffect } from "react";
+import { Mail } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, ShoppingBag, User } from "lucide-react";
 import gurmaniaLogoText from "@/assets/gurmania-logo-text.png";
 import { Lang, languages, gmContent } from "@/lib/i18n";
+
+const NewsletterForm = ({ lang }: { lang: string }) => {
+  const [email, setEmail] = useState("");
+  const [done, setDone] = useState(false);
+  if (done) return <p className="font-body text-gold text-sm">✓ {lang === "RU" ? "Подписано!" : lang === "AZ" ? "Abunə oldunuz!" : "Subscribed!"}</p>;
+  return (
+    <div className="flex gap-2">
+      <input value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Email" type="email" className="flex-1 bg-gurmania/50 border border-gold/15 rounded-lg px-3 py-2 font-body text-xs text-gurmania-foreground placeholder:text-gurmania-foreground/30 focus:outline-none focus:border-gold/40 transition-colors min-w-0" />
+      <button onClick={() => { if (email) setDone(true); }} className="bg-gold text-gurmania font-display text-[9px] tracking-[0.2em] px-4 py-2 rounded-lg hover:bg-gold-glow transition-colors flex-shrink-0">
+        <Mail className="w-3.5 h-3.5" />
+      </button>
+    </div>
+  );
+};
 
 interface Props {
   lang: Lang;
@@ -217,13 +232,12 @@ const GurManiaLayout = ({ lang, setLang, children }: Props) => {
 
             <div>
               <h4 className="font-display text-gold/80 text-xs tracking-[0.3em] mb-5 uppercase">
-                {lang === "RU" ? "Часы работы" : lang === "AZ" ? "İş saatları" : "Hours"}
+                {lang === "RU" ? "Будьте в курсе" : lang === "AZ" ? "Xəbərdar olun" : "Stay Updated"}
               </h4>
-              <div className="space-y-2.5">
-                <p className="font-body text-gurmania-text-secondary text-sm">
-                  {lang === "RU" ? "Ежедневно: 10:00 – 22:00" : lang === "AZ" ? "Hər gün: 10:00 – 22:00" : "Daily: 10:00 – 22:00"}
-                </p>
-              </div>
+              <p className="font-body text-gurmania-text-secondary text-sm mb-3">
+                {lang === "RU" ? "Ежедневно: 10:00 – 22:00" : lang === "AZ" ? "Hər gün: 10:00 – 22:00" : "Daily: 10:00 – 22:00"}
+              </p>
+              <NewsletterForm lang={lang} />
             </div>
           </div>
 
