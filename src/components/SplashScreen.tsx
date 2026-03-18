@@ -96,7 +96,7 @@ const SplashScreen = () => {
         {!isTransitioning && (
           <motion.div
             className="hidden md:flex absolute items-center justify-center pointer-events-none"
-            style={{ top: '50%', left: '50%', transform: 'translate(-50%, -50%)', zIndex: 60 }}
+            style={{ top: '65%', left: '50%', transform: 'translate(-50%, -50%)', zIndex: 60 }}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.9 }}
