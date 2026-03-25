@@ -9,13 +9,14 @@ import { mockProducts, mockEvents, mockPromos } from "@/lib/mock-data";
 import heroWine1 from "@/assets/hero-wine-1.jpg";
 import heroWine2 from "@/assets/hero-wine-2.jpg";
 import heroWine3 from "@/assets/hero-wine-3.jpg";
+import heroWineVisa from "@/assets/hero-wine-visa.jpg";
 import catWine from "@/assets/category-wine.jpg";
 import catCheese from "@/assets/category-cheese.jpg";
 import catMeat from "@/assets/category-meat.jpg";
 import aboutInterior from "@/assets/about-interior.jpg";
 import gurmaniaLogo from "@/assets/gurmania-logo-dark.png";
 
-const heroSlides = [heroWine1, heroWine2, heroWine3];
+const heroSlides = [heroWine1, heroWine2, heroWine3, heroWineVisa];
 
 const GurManiaPage = () => {
   const [lang, setLang] = useState<Lang>("EN");
