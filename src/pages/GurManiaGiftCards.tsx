@@ -6,20 +6,41 @@ import { Lang } from "@/lib/i18n";
 
 const presetAmounts = [50, 100, 200, 500, 1000];
 
-const cardGradients = [
-  "from-[hsl(43,52%,54%)] via-[hsl(43,60%,62%)] to-[hsl(30,40%,45%)]",
-  "from-[hsl(350,65%,34%)] via-[hsl(350,55%,42%)] to-[hsl(330,45%,30%)]",
-  "from-[hsl(220,60%,20%)] via-[hsl(240,50%,30%)] to-[hsl(260,40%,25%)]",
-  "from-[hsl(160,40%,25%)] via-[hsl(170,50%,30%)] to-[hsl(180,35%,20%)]",
-  "from-[hsl(0,0%,15%)] via-[hsl(43,52%,30%)] to-[hsl(0,0%,10%)]",
-];
+// Card tier names for display
+const cardTiers = ["GOLD", "SILVER", "PLATINUM", "BURGUNDY", "SAPPHIRE"];
 
-const cardPatterns = [
-  "radial-gradient(circle at 20% 80%, rgba(255,255,255,0.08) 0%, transparent 50%)",
-  "radial-gradient(circle at 80% 20%, rgba(255,255,255,0.1) 0%, transparent 50%)",
-  "radial-gradient(circle at 50% 50%, rgba(255,255,255,0.06) 0%, transparent 60%)",
-  "radial-gradient(circle at 30% 30%, rgba(255,255,255,0.08) 0%, transparent 50%)",
-  "radial-gradient(circle at 70% 70%, rgba(255,255,255,0.1) 0%, transparent 40%)",
+// Rich metallic gradients inspired by gurmania.az Gourmet Club style
+const cardStyles = [
+  {
+    // 50₼ — GOLD (like the Gourmet Club card)
+    bg: "linear-gradient(135deg, #8B6914 0%, #C9A84C 25%, #E8D48B 50%, #C9A84C 75%, #8B6914 100%)",
+    shadow: "0 20px 60px -15px rgba(201,168,76,0.4)",
+    accent: "rgba(232,212,139,0.3)",
+  },
+  {
+    // 100₼ — SILVER
+    bg: "linear-gradient(135deg, #5A5A5A 0%, #A8A8A8 25%, #D4D4D4 50%, #A8A8A8 75%, #5A5A5A 100%)",
+    shadow: "0 20px 60px -15px rgba(168,168,168,0.35)",
+    accent: "rgba(212,212,212,0.3)",
+  },
+  {
+    // 200₼ — PLATINUM (dark steel with shimmer)
+    bg: "linear-gradient(135deg, #1a1a2e 0%, #3d3d5c 25%, #6b6b8a 50%, #3d3d5c 75%, #1a1a2e 100%)",
+    shadow: "0 20px 60px -15px rgba(107,107,138,0.35)",
+    accent: "rgba(107,107,138,0.3)",
+  },
+  {
+    // 500₼ — BURGUNDY / WINE RED
+    bg: "linear-gradient(135deg, #3B0A1A 0%, #6B1D3A 25%, #8B2252 40%, #6B1D3A 60%, #4A1028 80%, #3B0A1A 100%)",
+    shadow: "0 20px 60px -15px rgba(107,29,58,0.45)",
+    accent: "rgba(139,34,82,0.3)",
+  },
+  {
+    // 1000₼ — COPPER
+    bg: "linear-gradient(135deg, #5C2E0E 0%, #B87333 25%, #DA8A47 50%, #B87333 75%, #5C2E0E 100%)",
+    shadow: "0 20px 60px -15px rgba(184,115,51,0.4)",
+    accent: "rgba(218,138,71,0.3)",
+  },
 ];
 
 const GiftCard = ({
