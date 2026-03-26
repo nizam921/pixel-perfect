@@ -70,12 +70,17 @@ const GiftCard = ({
       style={{ perspective: "1000px" }}
     >
       <div
-        className={`relative w-full aspect-[1.6/1] rounded-2xl overflow-hidden bg-gradient-to-br ${cardGradients[index % cardGradients.length]} shadow-2xl transition-shadow duration-500 ${
+        className={`relative w-full aspect-[1.6/1] rounded-2xl overflow-hidden shadow-2xl transition-shadow duration-500 ${
           selected
-            ? "ring-2 ring-gold ring-offset-2 ring-offset-gurmania shadow-gold/30"
-            : "shadow-black/40"
+            ? "ring-2 ring-gold ring-offset-2 ring-offset-gurmania"
+            : ""
         }`}
-        style={{ backgroundImage: cardPatterns[index % cardPatterns.length] }}
+        style={{
+          background: cardStyles[index % cardStyles.length].bg,
+          boxShadow: selected
+            ? `0 0 0 2px hsl(43 52% 54%), ${cardStyles[index % cardStyles.length].shadow}`
+            : cardStyles[index % cardStyles.length].shadow,
+        }}
       >
         {/* Shimmer effect */}
         <motion.div
@@ -451,11 +456,13 @@ const GurManiaGiftCards = () => {
                   >
                     <div className="w-72">
                       <div
-                        className={`relative w-full aspect-[1.6/1] rounded-2xl overflow-hidden bg-gradient-to-br ${
-                          isCustom
-                            ? "from-[hsl(43,52%,40%)] via-[hsl(43,52%,54%)] to-[hsl(30,40%,35%)]"
-                            : cardGradients[selectedCard ?? 0]
-                        } shadow-2xl shadow-gold/20`}
+                        className="relative w-full aspect-[1.6/1] rounded-2xl overflow-hidden shadow-2xl"
+                        style={{
+                          background: isCustom
+                            ? "linear-gradient(135deg, #8B6914 0%, #C9A84C 50%, #8B6914 100%)"
+                            : cardStyles[(selectedCard ?? 0) % cardStyles.length].bg,
+                          boxShadow: cardStyles[(selectedCard ?? 0) % cardStyles.length].shadow,
+                        }}
                       >
                         <div className="relative z-10 h-full flex flex-col justify-between p-5">
                           <div className="flex items-center gap-2">
