@@ -82,14 +82,24 @@ const GiftCard = ({
             : cardStyles[index % cardStyles.length].shadow,
         }}
       >
-        {/* Shimmer effect */}
-        <motion.div
-          className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent"
-          animate={{
-            x: hovered ? ["−200%", "200%"] : "−200%",
+        {/* Metallic light overlay */}
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            background: `radial-gradient(ellipse at 30% 20%, ${cardStyles[index % cardStyles.length].accent} 0%, transparent 60%), radial-gradient(ellipse at 80% 80%, rgba(0,0,0,0.2) 0%, transparent 50%)`,
           }}
-          transition={{ duration: 1.2, ease: "easeInOut" }}
-          style={{ transform: "skewX(-20deg)" }}
+        />
+
+        {/* Shimmer sweep effect */}
+        <motion.div
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            background: "linear-gradient(105deg, transparent 40%, rgba(255,255,255,0.15) 45%, rgba(255,255,255,0.05) 50%, transparent 55%)",
+          }}
+          animate={{
+            x: hovered ? ["-100%", "200%"] : "-100%",
+          }}
+          transition={{ duration: 1, ease: "easeInOut" }}
         />
 
         {/* Floating particles */}
@@ -146,8 +156,8 @@ const GiftCard = ({
                 ₼
               </span>
             </motion.div>
-            <p className="font-body text-white/50 text-xs mt-1 tracking-wider">
-              GIFT CARD
+            <p className="font-body text-white/50 text-xs mt-1 tracking-[0.25em]">
+              {cardTiers[index % cardTiers.length]} · GIFT CARD
             </p>
           </div>
 
