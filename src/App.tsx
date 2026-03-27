@@ -36,6 +36,7 @@ const App = () => (
           <Route path="/gurmania/auction" element={<GurManiaAuction />} />
           <Route path="/gurmania/contacts" element={<GurManiaContacts />} />
           <Route path="/gurmania/gift-cards" element={<GurManiaGiftCards />} />
+          <Route path="/gurmania/checkout/success" element={<GurManiaCheckoutSuccess />} />
           <Route path="/innvino" element={<InnVinoPage />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
