@@ -13,6 +13,7 @@ import GurManiaGallery from "./pages/GurManiaGallery.tsx";
 import GurManiaAuction from "./pages/GurManiaAuction.tsx";
 import GurManiaContacts from "./pages/GurManiaContacts.tsx";
 import GurManiaGiftCards from "./pages/GurManiaGiftCards.tsx";
+import GurManiaCheckoutSuccess from "./pages/GurManiaCheckoutSuccess.tsx";
 import InnVinoPage from "./pages/InnVino.tsx";
 import NotFound from "./pages/NotFound.tsx";
 
