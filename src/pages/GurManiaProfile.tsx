@@ -75,7 +75,7 @@ const GurManiaProfile = () => {
   const togglePref = (item: string) => {
     setSelectedPrefs(prev => {
       const next = new Set(prev);
-      next.has(item) ? next.delete(item) : next.add(item);
+      if (next.has(item)) { next.delete(item); } else { next.add(item); }
       return next;
     });
   };

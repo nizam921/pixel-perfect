@@ -15,6 +15,7 @@ import GurManiaContacts from "./pages/GurManiaContacts.tsx";
 import GurManiaGiftCards from "./pages/GurManiaGiftCards.tsx";
 import GurManiaCheckoutSuccess from "./pages/GurManiaCheckoutSuccess.tsx";
 import GurManiaSubscription from "./pages/GurManiaSubscription.tsx";
+import GurManiaProfile from "./pages/GurManiaProfile.tsx";
 import InnVinoPage from "./pages/InnVino.tsx";
 import NotFound from "./pages/NotFound.tsx";
 
