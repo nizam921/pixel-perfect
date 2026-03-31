@@ -40,6 +40,7 @@ const App = () => (
           <Route path="/gurmania/gift-cards" element={<GurManiaGiftCards />} />
           <Route path="/gurmania/checkout/success" element={<GurManiaCheckoutSuccess />} />
           <Route path="/gurmania/subscription" element={<GurManiaSubscription />} />
+          <Route path="/gurmania/profile" element={<GurManiaProfile />} />
           <Route path="/innvino" element={<InnVinoPage />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
