@@ -2,8 +2,8 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   User, ShoppingBag, Star, Crown, CreditCard,
-  ChevronDown, ChevronRight, Printer, Mail, Search,
-  MapPin, Package, Percent, Eye, EyeOff, Phone, Edit3, Save, Check
+  ChevronDown, Printer, Mail, Search,
+  MapPin, Phone, Edit3, Save, Check
 } from "lucide-react";
 import GurManiaLayout from "@/components/GurManiaLayout";
 import { Lang } from "@/lib/i18n";
