@@ -100,9 +100,9 @@ const GurManiaLayout = ({ lang, setLang, children }: Props) => {
             <button className="text-gurmania-foreground/60 hover:text-gold transition-colors duration-300">
               <ShoppingBag className="w-5 h-5" />
             </button>
-            <button className="text-gurmania-foreground/60 hover:text-gold transition-colors duration-300">
+            <Link to="/gurmania/profile" className="text-gurmania-foreground/60 hover:text-gold transition-colors duration-300">
               <User className="w-5 h-5" />
-            </button>
+            </Link>
             <button
               className="lg:hidden text-gurmania-foreground/60 hover:text-gold"
               onClick={() => setMenuOpen(true)}
